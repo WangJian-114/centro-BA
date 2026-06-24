@@ -1,0 +1,300 @@
+/* ========================================
+   CONTACTO.CSS — Página Contacto
+   ======================================== */
+
+/* ----- HERO ----- */
+.contact-hero {
+  background: var(--navy);
+  padding: 80px 28px 106px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(37,99,235,.18) 0%, transparent 65%);
+}
+.contact-hero-inner { position: relative; }
+.contact-hero h1 {
+  font-size: clamp(28px, 4.5vw, 46px);
+  font-weight: 900;
+  color: white;
+  letter-spacing: -.7px;
+  margin-bottom: 14px;
+}
+.contact-hero p {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ----- CONTACT TYPE CARDS (flotan) ----- */
+.contact-types-wrapper { background: white; }
+.contact-types-grid {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  transform: translateY(-36px);
+}
+
+.contact-type-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+.contact-type-card:hover {
+  box-shadow: var(--sh-lg);
+  border-color: var(--blue);
+  transform: translateY(-3px);
+}
+
+.ct-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  transition: background .18s;
+}
+.contact-type-card:hover .ct-icon { background: #dbeafe; }
+.ct-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+.contact-type-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--txt-dark);
+  margin-bottom: 4px;
+}
+.contact-type-card p {
+  font-size: 12px;
+  color: var(--txt-light);
+  line-height: 1.4;
+}
+
+/* ----- ÁREA PRINCIPAL: formulario + info ----- */
+.contact-main {
+  background: var(--bg-subtle);
+  padding: 10px 0 64px;
+}
+.contact-main-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 26px;
+  align-items: start;
+}
+
+/* ----- FORMULARIO ----- */
+.form-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 38px;
+  box-shadow: var(--sh-sm);
+}
+.form-card h2 {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--txt-dark);
+  margin-bottom: 28px;
+  letter-spacing: -.3px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group { margin-bottom: 20px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--txt-dark);
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border-md);
+  border-radius: var(--r-md);
+  font-size: 14px;
+  color: var(--txt-dark);
+  background: white;
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+  appearance: auto;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--txt-xlight); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+}
+
+.form-group textarea { resize: vertical; min-height: 136px; line-height: 1.65; }
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  background: var(--blue);
+  color: white;
+  border-radius: var(--r-md);
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: none;
+  cursor: pointer;
+  transition: background .18s, transform .1s;
+}
+.btn-submit:hover  { background: var(--blue-hover); }
+.btn-submit:active { transform: scale(.99); }
+.btn-submit svg    { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* ----- PANEL INFO INSTITUCIONAL ----- */
+.info-panel {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--sh-sm);
+}
+.info-panel-hd {
+  padding: 24px 24px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.info-panel-hd h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--txt-dark);
+  letter-spacing: -.2px;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+}
+.info-row:last-of-type { border-bottom: none; }
+
+.info-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.info-dot svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.info-dot.blue   { background: #dbeafe; color: var(--blue); }
+.info-dot.green  { background: #d1fae5; color: var(--green-dark); }
+.info-dot.purple { background: #ede9fe; color: var(--purple); }
+.info-dot.yellow { background: #fef3c7; color: var(--amber-dark); }
+
+.info-row-text strong { display: block; font-size: 13px; font-weight: 700; color: var(--txt-dark); }
+.info-row-text span   { font-size: 13px; color: var(--txt-med); }
+
+/* Mapa Leaflet */
+.map-area {
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.map-caption {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--txt-light);
+  margin-top: 8px;
+}
+.map-caption svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* Confirmación envío */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success.show { display: block; }
+.form-success .check-circle {
+  width: 64px;
+  height: 64px;
+  background: #d1fae5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--green-dark);
+}
+.form-success .check-circle svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 2.5; }
+.form-success h3 { font-size: 18px; font-weight: 700; color: var(--txt-dark); margin-bottom: 8px; }
+.form-success p  { font-size: 14px; color: var(--txt-light); }
+
+/* ----- Validación de formulario ----- */
+.form-group input.input-error,
+.form-group textarea.input-error {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,.12);
+  background: #fff5f5;
+}
+.form-group input.input-ok,
+.form-group textarea.input-ok {
+  border-color: var(--green-dark) !important;
+  box-shadow: 0 0 0 3px rgba(5,150,105,.1);
+}
+.field-error {
+  display: block;
+  margin-top: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--red);
+  min-height: 16px;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 860px) {
+  .contact-types-grid  { grid-template-columns: repeat(2, 1fr); }
+  .contact-main-inner  { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .form-row            { grid-template-columns: 1fr; }
+  .form-card           { padding: 24px; }
+  .contact-types-grid  { grid-template-columns: repeat(2, 1fr); }
+}

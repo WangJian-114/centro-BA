@@ -1,0 +1,318 @@
+/* ========================================
+   ASISTENCIA.CSS — Asistencia al Pasajero
+   ======================================== */
+
+/* ----- HERO ----- */
+.assist-hero {
+  position: relative;
+  background: var(--navy);
+  padding: 80px 28px 110px;
+  text-align: center;
+  overflow: hidden;
+}
+.assist-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1400&q=80')
+              center / cover no-repeat;
+  opacity: .12;
+}
+.assist-hero-inner { position: relative; }
+
+.assist-hero h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 28px;
+  letter-spacing: -.5px;
+}
+
+.assist-search-wrap {
+  max-width: 580px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: var(--r-xl);
+  padding: 15px 22px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+.assist-search-wrap svg { color: var(--txt-xlight); flex-shrink: 0; width: 20px; height: 20px; }
+.assist-search-wrap input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: var(--txt-dark);
+}
+.assist-search-wrap input::placeholder { color: var(--txt-xlight); }
+
+.assist-suggestions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: rgba(255,255,255,.65);
+}
+.suggest-chip {
+  padding: 4px 13px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 20px;
+  color: rgba(255,255,255,.85);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .18s;
+}
+.suggest-chip:hover { background: rgba(255,255,255,.18); }
+
+/* ----- QUICK ACTIONS (flotan sobre hero) ----- */
+.quick-actions-wrapper {
+  background: white;
+  padding: 0 28px;
+}
+.quick-actions-grid {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  transform: translateY(-38px);
+}
+
+.action-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 26px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+.action-card:hover {
+  box-shadow: var(--sh-lg);
+  border-color: var(--blue);
+  transform: translateY(-3px);
+}
+
+.action-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 13px;
+  transition: background .18s;
+}
+.action-card:hover .action-icon { background: #dbeafe; }
+.action-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.action-card span {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--txt-dark);
+  line-height: 1.4;
+  display: block;
+}
+
+/* ----- FAQ + CANALES ----- */
+.faq-section {
+  padding: 10px 0 64px;
+  background: var(--bg-white);
+}
+.faq-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  align-items: start;
+}
+
+.faq-col h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 24px;
+  letter-spacing: -.3px;
+}
+
+/* FAQ accordion */
+.faq-list { display: flex; flex-direction: column; gap: 10px; }
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: box-shadow .18s;
+}
+.faq-item.open { box-shadow: var(--sh-md); border-color: var(--border-md); }
+
+.faq-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 18px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: background .18s;
+}
+.faq-btn:hover { background: var(--bg-light); }
+
+.faq-ico {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  background: #dbeafe;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.faq-ico svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+.faq-q {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--txt-dark);
+}
+
+.faq-chevron {
+  flex-shrink: 0;
+  color: var(--txt-light);
+  transition: transform .25s;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+.faq-answer-inner {
+  padding: 0 18px 18px 60px;
+  font-size: 13.5px;
+  color: var(--txt-med);
+  line-height: 1.75;
+  background: var(--bg-light);
+}
+.faq-item.open .faq-answer { max-height: 300px; }
+
+/* Sugerencia dentro de respuesta */
+.faq-tip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+/* ----- COLUMNA DERECHA: canales + redes ----- */
+.channels-card {
+  background: var(--navy);
+  border-radius: var(--r-lg);
+  padding: 26px;
+  color: white;
+  margin-bottom: 18px;
+}
+.channels-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: var(--r-md);
+  padding: 13px 15px;
+  margin-bottom: 9px;
+  cursor: pointer;
+  transition: background .18s;
+  text-decoration: none;
+  color: inherit;
+}
+.channel-item:last-child { margin-bottom: 0; }
+.channel-item:hover { background: rgba(255,255,255,.13); }
+
+.ch-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ch-icon svg { width: 18px; height: 18px; }
+.ch-icon.green  { background: #22c55e; }
+.ch-icon.blue   { background: #3b82f6; }
+.ch-icon.yellow { background: #f59e0b; }
+
+.ch-info { flex: 1; }
+.ch-info strong { display: block; font-size: 13.5px; font-weight: 700; color: white; }
+.ch-info span   { font-size: 12px; color: rgba(255,255,255,.6); }
+
+.ch-arrow { color: rgba(255,255,255,.45); flex-shrink: 0; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* Social card */
+.social-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px;
+}
+.social-card h4 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--txt-light);
+  margin-bottom: 14px;
+}
+.social-icons { display: flex; gap: 10px; }
+.social-icon-btn {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--border-md);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--txt-med);
+  cursor: pointer;
+  transition: all .18s;
+}
+.social-icon-btn:hover { border-color: var(--blue); color: var(--blue); }
+.social-icon-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* ----- Responsive ----- */
+@media (max-width: 860px) {
+  .quick-actions-grid { grid-template-columns: repeat(3, 1fr); }
+  .faq-inner          { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .quick-actions-grid { grid-template-columns: repeat(2, 1fr); }
+  .assist-hero        { padding-bottom: 80px; }
+}

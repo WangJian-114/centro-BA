@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto – CentroBA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/contacto.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="CentroBA – Inicio">
+      <div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>
+      CentroBA
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Nuestras líneas</a>
+      <a href="consulta.html">Consulta de Viajes</a>
+      <a href="servicios.html">Servicios de Terminal</a>
+      <a href="alertas.html">Alertas y novedades</a>
+      <a href="asistencia.html">Asistencia</a>
+      <a href="accesibilidad.html">Accesibilidad</a>
+      <a href="contacto.html" class="active">Contacto</a>
+    </div>
+    <button class="nav-btn">Iniciar Sesión</button>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" role="dialog" aria-label="Menú móvil">
+  <a href="index.html">Nuestras líneas</a>
+  <a href="consulta.html">Consulta de Viajes</a>
+  <a href="servicios.html">Servicios de Terminal</a>
+  <a href="alertas.html">Alertas y novedades</a>
+  <a href="asistencia.html">Asistencia</a>
+  <a href="accesibilidad.html">Accesibilidad</a>
+  <a href="contacto.html" class="active">Contacto</a>
+  <a href="#" class="m-login">Iniciar Sesión</a>
+</div>
+
+<!-- HERO -->
+<section class="contact-hero" aria-labelledby="contact-heading">
+  <div class="contact-hero-inner">
+    <h1 id="contact-heading">Estamos para escucharte</h1>
+    <p>Tu opinión nos ayuda a construir una ciudad mejor conectada. Envianos tus dudas o sugerencias.</p>
+  </div>
+</section>
+
+<!-- CONTACT TYPE CARDS -->
+<div class="contact-types-wrapper" aria-label="Tipos de consulta disponibles">
+  <div class="contact-types-grid">
+
+    <div class="contact-type-card" tabindex="0" role="button" aria-label="Reclamos: gestión directa de incidentes">
+      <div class="ct-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" y1="9" x2="16" y2="9"/><line x1="22" y1="12" x2="16" y2="12"/><line x1="22" y1="15" x2="16" y2="15"/></svg>
+      </div>
+      <h3>Reclamos</h3>
+      <p>Gestión directa de incidentes</p>
+    </div>
+
+    <div class="contact-type-card" tabindex="0" role="button" aria-label="Objetos Perdidos: recuperá tus pertenencias">
+      <div class="ct-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </div>
+      <h3>Objetos Perdidos</h3>
+      <p>Recuperá tus pertenencias</p>
+    </div>
+
+    <div class="contact-type-card" tabindex="0" role="button" aria-label="Información de Líneas: horarios y recorridos">
+      <div class="ct-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <h3>Información de Líneas</h3>
+      <p>Horarios y recorridos</p>
+    </div>
+
+    <div class="contact-type-card" tabindex="0" role="button" aria-label="Accesibilidad: servicios asistidos">
+      <div class="ct-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M9 11l3 2 3-2M9 17l3 4 3-4"/></svg>
+      </div>
+      <h3>Accesibilidad</h3>
+      <p>Servicios asistidos</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FORMULARIO + INFO -->
+<section class="contact-main" aria-label="Formulario de contacto e información institucional">
+  <div class="contact-main-inner">
+
+    <!-- Formulario -->
+    <div class="form-card">
+      <h2>Envianos un mensaje</h2>
+      <form id="contactForm" novalidate aria-label="Formulario de contacto">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="juan@ejemplo.com" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto">
+            <option value="">Consulta General</option>
+            <option value="reclamo">Reclamo</option>
+            <option value="perdidos">Objetos Perdidos</option>
+            <option value="accesibilidad">Accesibilidad</option>
+            <option value="horarios">Horarios y Recorridos</option>
+            <option value="sube">Ayuda con SUBE</option>
+            <option value="sugerencia">Sugerencia</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          Enviar Mensaje
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+        </button>
+      </form>
+
+      <!-- Confirmación de envío -->
+      <div class="form-success" id="formSuccess" aria-live="polite">
+        <div class="check-circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h3>¡Mensaje enviado con éxito!</h3>
+        <p>Te responderemos en un plazo de 48 horas hábiles al correo indicado.</p>
+      </div>
+    </div>
+
+    <!-- Info panel -->
+    <div class="info-panel" aria-label="Información institucional de CentroBA">
+      <div class="info-panel-hd">
+        <h3>Información Institucional</h3>
+      </div>
+
+      <div class="info-row">
+        <div class="info-dot blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="info-row-text">
+          <strong>Sede Central</strong>
+          <span>Av. Martín García 346, CABA</span>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-dot green" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="info-row-text">
+          <strong>Horarios de Atención</strong>
+          <span>Lunes a Viernes: 08:00 – 20:00 hs</span>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-dot purple" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.18 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.5 7.5a16 16 0 006 6l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0120 16.92z"/></svg>
+        </div>
+        <div class="info-row-text">
+          <strong>Teléfono</strong>
+          <span>147 (Atención Ciudadana)</span>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-dot yellow" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="info-row-text">
+          <strong>Correo Electrónico</strong>
+          <span>contacto@centroba.gob.ar</span>
+        </div>
+      </div>
+
+      <!-- Mapa Leaflet -->
+      <div class="map-area" aria-label="Mapa de ubicación de la sede central en Av. Martín García 346">
+        <div id="leafletMap" style="height:220px;border-radius:10px;overflow:hidden;"></div>
+        <p class="map-caption">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Av. Martín García 346, CABA
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>CentroBA</a>
+      <p>Transformando la movilidad urbana de Buenos Aires con tecnología y eficiencia.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="#">Mapa del Sitio</a></li>
+        <li><a href="#">Datos Abiertos</a></li>
+        <li><a href="#">Prensa</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legales</h4>
+      <ul>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Síguenos</h4>
+      <div class="footer-socials" style="margin-top:6px;">
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </a>
+        <a href="#" aria-label="RSS">
+          <svg viewBox="0 0 24 24"><path d="M4 11a9 9 0 019 9M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2024 CentroBA – Gobierno de la Ciudad de Buenos Aires</span>
+      <span>Versión 2.4.0</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  /* ── Validación del formulario de contacto ── */
+  const form = document.getElementById('contactForm');
+
+  const RULES = {
+    nombre:  { required: true, minLen: 3, pattern: /^[a-záéíóúüñA-ZÁÉÍÓÚÜÑ\s'-]+$/, msg: 'Ingresá tu nombre completo (solo letras, mínimo 3 caracteres).' },
+    email:   { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, msg: 'Ingresá un correo electrónico válido.' },
+    mensaje: { required: true, minLen: 10, msg: 'El mensaje debe tener al menos 10 caracteres.' },
+  };
+
+  function showError(field, msg) {
+    field.classList.add('input-error');
+    field.classList.remove('input-ok');
+    let err = field.parentElement.querySelector('.field-error');
+    if (!err) {
+      err = document.createElement('span');
+      err.className = 'field-error';
+      err.setAttribute('aria-live', 'polite');
+      field.parentElement.appendChild(err);
+    }
+    err.textContent = msg;
+  }
+
+  function clearError(field) {
+    field.classList.remove('input-error');
+    field.classList.add('input-ok');
+    const err = field.parentElement.querySelector('.field-error');
+    if (err) err.textContent = '';
+  }
+
+  function validateField(field) {
+    const rule = RULES[field.name];
+    if (!rule) return true;
+    const val = field.value.trim();
+
+    if (rule.required && !val) { showError(field, 'Este campo es obligatorio.'); return false; }
+    if (rule.minLen && val.length < rule.minLen) { showError(field, rule.msg); return false; }
+    if (rule.pattern && !rule.pattern.test(val)) { showError(field, rule.msg); return false; }
+
+    clearError(field);
+    return true;
+  }
+
+  // Validación en tiempo real al salir del campo
+  ['nombre', 'email', 'mensaje'].forEach(name => {
+    const el = document.getElementById(name);
+    el.addEventListener('blur', () => validateField(el));
+    el.addEventListener('input', () => { if (el.classList.contains('input-error')) validateField(el); });
+  });
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fields = ['nombre', 'email', 'mensaje'].map(n => document.getElementById(n));
+    const allValid = fields.map(validateField).every(Boolean);
+
+    if (!allValid) {
+      // Enfocar el primer campo con error
+      const first = fields.find(f => f.classList.contains('input-error'));
+      if (first) first.focus();
+      return;
+    }
+
+    // Todo OK → mostrar confirmación
+    form.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+  });
+</script>
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const LAT = -34.6196;
+  const LNG = -58.3731;
+
+  const map = L.map('leafletMap', { zoomControl: true, scrollWheelZoom: false }).setView([LAT, LNG], 16);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  const icon = L.divIcon({
+    className: '',
+    html: `<div style="
+      width:36px;height:36px;background:#1a2e5a;border-radius:50% 50% 50% 0;
+      transform:rotate(-45deg);border:3px solid white;
+      box-shadow:0 3px 10px rgba(0,0,0,.35);
+    "></div>`,
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+    popupAnchor: [0, -40],
+  });
+
+  L.marker([LAT, LNG], { icon })
+    .addTo(map)
+    .bindPopup('<strong>CentroBA – Sede Central</strong><br>Av. Martín García 346, CABA')
+    .openPopup();
+</script>
+</body>
+</html>

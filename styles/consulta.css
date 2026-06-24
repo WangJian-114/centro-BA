@@ -1,0 +1,365 @@
+/* ========================================
+   CONSULTA.CSS — Consulta de Viajes
+   ======================================== */
+
+/* ----- HERO ----- */
+.consulta-hero {
+  background: var(--navy);
+  padding: 56px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.consulta-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1400&q=80')
+              center / cover no-repeat;
+  opacity: .1;
+}
+.consulta-hero-inner {
+  position: relative;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+  text-align: center;
+  color: white;
+}
+.consulta-hero h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: -.6px;
+}
+.consulta-hero p {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 0;
+}
+
+/* ----- FORMULARIO DE CONSULTA (flota sobre hero) ----- */
+.search-form-wrapper {
+  background: transparent;
+  padding: 0 28px;
+}
+.search-form-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: white;
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-lg);
+  padding: 32px 36px;
+  transform: translateY(-52px);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-field label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--txt-light);
+}
+
+.field-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.field-wrap svg {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: var(--txt-xlight);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  pointer-events: none;
+}
+.field-wrap input,
+.field-wrap select {
+  width: 100%;
+  padding: 11px 13px 11px 38px;
+  border: 1.5px solid var(--border-md);
+  border-radius: var(--r-md);
+  font-size: 14px;
+  color: var(--txt-dark);
+  background: white;
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+  appearance: auto;
+}
+.field-wrap input::placeholder { color: var(--txt-xlight); }
+.field-wrap input:focus,
+.field-wrap select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+}
+
+.btn-buscar {
+  padding: 11px 28px;
+  background: var(--blue);
+  color: white;
+  border-radius: var(--r-md);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background .18s, transform .1s;
+  white-space: nowrap;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-buscar:hover  { background: var(--blue-hover); }
+.btn-buscar:active { transform: scale(.98); }
+.btn-buscar svg    { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* ----- RESULTADOS ----- */
+.results-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 28px 60px;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.results-header h2 { font-size: 20px; font-weight: 800; color: var(--txt-dark); letter-spacing: -.3px; }
+.results-route { font-size: 13px; color: var(--txt-light); }
+.results-route strong { color: var(--txt-dark); font-weight: 600; }
+
+/* Loading state */
+.loading-state {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 48px 0;
+  color: var(--txt-light);
+}
+.loading-state.show { display: flex; }
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Empty state */
+.empty-state {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 56px 0;
+  color: var(--txt-light);
+  text-align: center;
+}
+.empty-state.show { display: flex; }
+.empty-state svg { width: 52px; height: 52px; opacity: .3; }
+.empty-state h3 { font-size: 17px; font-weight: 700; color: var(--txt-med); }
+.empty-state p  { font-size: 14px; max-width: 320px; }
+
+/* Result cards */
+.results-list { display: flex; flex-direction: column; gap: 14px; }
+
+.result-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: box-shadow .2s;
+  cursor: pointer;
+}
+.result-card:hover { box-shadow: var(--sh-md); }
+.result-card.recommended { border-color: var(--blue); }
+
+.result-card-top {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Recomendado badge */
+.rec-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  background: #dbeafe;
+  color: var(--blue);
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* Transport icon */
+.transport-ico {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.transport-ico.bus    { background: #dbeafe; color: var(--blue); }
+.transport-ico.subte  { background: #fce7f3; color: #be185d; }
+.transport-ico.train  { background: #d1fae5; color: var(--green-dark); }
+.transport-ico.metrobus { background: #fef3c7; color: var(--amber-dark); }
+.transport-ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+.result-info { flex: 1; min-width: 0; }
+.result-info h3 { font-size: 15px; font-weight: 700; color: var(--txt-dark); margin-bottom: 4px; }
+.result-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.rtag {
+  padding: 2px 8px;
+  background: var(--bg-subtle);
+  border-radius: 4px;
+  font-size: 11.5px;
+  color: var(--txt-med);
+  font-weight: 500;
+}
+
+/* Stats row */
+.result-stats {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+.rstat {
+  flex: 1;
+  padding: 14px 16px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.rstat:last-child { border-right: none; }
+.rstat-label { font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--txt-xlight); margin-bottom: 5px; }
+.rstat-value { font-size: 16px; font-weight: 800; color: var(--txt-dark); }
+.rstat-value.highlight { color: var(--blue); }
+
+/* Detalle expandible */
+.result-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
+}
+.result-detail.open { max-height: 300px; }
+.result-detail-inner {
+  padding: 16px 20px;
+  background: var(--bg-light);
+  border-top: 1px solid var(--border);
+}
+.detail-steps { display: flex; flex-direction: column; gap: 10px; }
+.dstep {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--txt-med);
+}
+.dstep-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ----- INFO FOOTER ----- */
+.consulta-info {
+  background: var(--bg-subtle);
+  padding: 40px 0;
+}
+.consulta-info-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.consulta-tip {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.consulta-tip-ico {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  background: #dbeafe;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.consulta-tip-ico svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+.consulta-tip h4 { font-size: 13px; font-weight: 700; color: var(--txt-dark); margin-bottom: 4px; }
+.consulta-tip p  { font-size: 12px; color: var(--txt-light); line-height: 1.55; }
+
+/* ----- Validación de formulario ----- */
+.field-wrap select.sel-error {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 0 3px rgba(239,68,68,.12);
+  background: #fff5f5;
+}
+.field-wrap select.sel-ok {
+  border-color: var(--green-dark) !important;
+  box-shadow: 0 0 0 3px rgba(5,150,105,.1);
+}
+.field-err {
+  display: block;
+  margin-top: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--red);
+  min-height: 16px;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .form-grid > :last-child { grid-column: span 2; }
+  .result-stats { flex-wrap: wrap; }
+  .rstat { min-width: 50%; border-bottom: 1px solid var(--border); }
+  .consulta-info-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid > :last-child { grid-column: span 1; }
+  .search-form-card { padding: 20px; }
+}

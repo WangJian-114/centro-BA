@@ -1,0 +1,342 @@
+/* ========================================
+   ACCESIBILIDAD.CSS — Página Accesibilidad
+   ======================================== */
+
+/* ----- HERO ----- */
+.access-hero {
+  background: var(--navy);
+  padding: 72px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.access-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(37,99,235,.2) 0%, transparent 60%);
+}
+
+.access-hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+
+.access-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: rgba(255,255,255,.8);
+  margin-bottom: 20px;
+  letter-spacing: .05em;
+}
+.access-pill svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.access-hero h1 {
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 900;
+  color: white;
+  line-height: 1.12;
+  letter-spacing: -.8px;
+  max-width: 480px;
+  margin-bottom: 16px;
+}
+.access-hero > .access-hero-inner > .access-hero-left > p {
+  font-size: 15px;
+  color: rgba(255,255,255,.7);
+  max-width: 420px;
+  line-height: 1.7;
+}
+
+.access-hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Badge 95% */
+.fleet-badge {
+  background: var(--amber);
+  border-radius: var(--r-lg);
+  padding: 16px 22px;
+  text-align: center;
+}
+.fleet-badge .pct {
+  font-size: 32px;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.fleet-badge .lbl {
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,.85);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin-top: 5px;
+}
+
+/* Figura persona */
+.access-figure {
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,.07);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.access-figure svg { width: 58px; height: 58px; fill: rgba(255,255,255,.45); }
+
+/* ----- STAT CARDS (flotan) ----- */
+.access-stats-wrapper { background: white; }
+.access-stats-grid {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  transform: translateY(-40px);
+}
+
+.astat-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 22px 24px;
+  box-shadow: var(--sh-lg);
+}
+
+.astat-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.astat-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--r-sm);
+  background: #dbeafe;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.astat-icon-wrap svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+.astat-info { flex: 1; }
+.astat-info h3 { font-size: 14px; font-weight: 700; color: var(--txt-dark); margin-bottom: 3px; }
+.astat-info p  { font-size: 12px; color: var(--txt-light); }
+
+.astat-tag {
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.astat-tag.ok      { background: #dcfce7; color: #166534; }
+.astat-tag.updated { background: #dbeafe; color: #1e40af; }
+.astat-tag.live    { background: #fee2e2; color: #991b1b; }
+
+/* Progress bar */
+.progress-track { height: 6px; background: var(--bg-subtle); border-radius: 3px; overflow: hidden; }
+.progress-fill  { height: 100%; background: var(--blue); border-radius: 3px; transition: width .6s ease; }
+
+/* ----- INFRAESTRUCTURA ----- */
+.infra-section { padding: 10px 0 60px; }
+.infra-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.infra-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.infra-header h2 {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -.4px;
+}
+.infra-header p {
+  font-size: 14px;
+  color: var(--txt-light);
+  margin-top: 7px;
+  max-width: 460px;
+  line-height: 1.65;
+}
+
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.infra-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  transition: box-shadow .2s, transform .2s;
+}
+.infra-card:hover { box-shadow: var(--sh-md); transform: translateY(-2px); }
+
+.infra-ico {
+  width: 44px;
+  height: 44px;
+  background: var(--bg-subtle);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  color: var(--blue);
+}
+.infra-ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+.infra-card .ic-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--txt-light);
+  margin-bottom: 9px;
+}
+.infra-card p { font-size: 13px; color: var(--txt-med); line-height: 1.6; }
+
+/* ----- EXPERIENCIA DIGITAL ----- */
+.digital-section {
+  background: var(--bg-subtle);
+  padding: 60px 0;
+}
+.digital-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+  text-align: center;
+}
+.digital-inner h2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -.4px;
+  margin-bottom: 10px;
+}
+.digital-inner > p {
+  font-size: 15px;
+  color: var(--txt-light);
+  max-width: 540px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.digital-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  text-align: left;
+}
+
+.digital-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: box-shadow .2s;
+}
+.digital-card:hover { box-shadow: var(--sh-md); }
+
+.digital-ico {
+  width: 46px;
+  height: 46px;
+  background: #dbeafe;
+  color: var(--blue);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.digital-ico svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+
+.digital-card h3 { font-size: 15px; font-weight: 700; color: var(--txt-dark); margin-bottom: 7px; }
+.digital-card p  { font-size: 13px; color: var(--txt-med); line-height: 1.65; }
+
+/* ----- CTA BANNER ----- */
+.cta-banner {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.cta-banner-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1400&q=80')
+              center / cover no-repeat;
+}
+.cta-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(15,31,63,.85) 0%, rgba(15,31,63,.5) 100%);
+}
+.cta-banner-content {
+  position: relative;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+  color: white;
+}
+.cta-banner-content h2 {
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  letter-spacing: -.5px;
+}
+.cta-banner-content p {
+  font-size: 15px;
+  color: rgba(255,255,255,.75);
+  max-width: 420px;
+  line-height: 1.65;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 1024px) {
+  .infra-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .access-hero-inner    { grid-template-columns: 1fr; }
+  .access-hero-right    { flex-direction: row; align-items: center; }
+  .access-stats-grid    { grid-template-columns: 1fr; transform: translateY(-20px); }
+  .digital-grid         { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .infra-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asistencia al Pasajero – CentroBA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/asistencia.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="CentroBA – Inicio">
+      <div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>
+      CentroBA
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Nuestras líneas</a>
+      <a href="consulta.html">Consulta de Viajes</a>
+      <a href="servicios.html">Servicios de Terminal</a>
+      <a href="alertas.html">Alertas y novedades</a>
+      <a href="asistencia.html" class="active">Asistencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="nav-btn">Iniciar Sesión</button>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" role="dialog" aria-label="Menú móvil">
+  <a href="index.html">Nuestras líneas</a>
+  <a href="consulta.html">Consulta de Viajes</a>
+  <a href="servicios.html">Servicios de Terminal</a>
+  <a href="alertas.html">Alertas y novedades</a>
+  <a href="asistencia.html" class="active">Asistencia</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="#" class="m-login">Iniciar Sesión</a>
+</div>
+
+<!-- HERO -->
+<section class="assist-hero" aria-labelledby="assist-heading">
+  <div class="assist-hero-bg" aria-hidden="true"></div>
+  <div class="assist-hero-inner">
+    <h1 id="assist-heading">¿Cómo podemos ayudarte?</h1>
+    <div class="assist-search-wrap" role="search">
+      <svg width="20" height="20" fill="none" stroke="#9ca3af" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" placeholder="Buscar trámites, horarios, SUBE..." aria-label="Buscar en asistencia" />
+    </div>
+    <div class="assist-suggestions" aria-label="Búsquedas frecuentes">
+      <span>Sugerencias:</span>
+      <button class="suggest-chip">Saldo SUBE</button>
+      <button class="suggest-chip">Objetos Perdidos</button>
+      <button class="suggest-chip">Reclamos</button>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK ACTIONS -->
+<div class="quick-actions-wrapper" aria-label="Acciones rápidas de asistencia">
+  <div class="quick-actions-grid">
+
+    <div class="action-card" tabindex="0" role="button" aria-label="Recuperar objeto perdido">
+      <div class="action-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <span>Recuperar objeto perdido</span>
+    </div>
+
+    <div class="action-card" tabindex="0" role="button" aria-label="Solicitar asistencia">
+      <div class="action-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M9 11l3 2 3-2M9 17l3 4 3-4"/></svg>
+      </div>
+      <span>Solicitar asistencia</span>
+    </div>
+
+    <div class="action-card" tabindex="0" role="button" aria-label="Reportar incidente">
+      <div class="action-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <span>Reportar incidente</span>
+    </div>
+
+    <div class="action-card" tabindex="0" role="button" aria-label="Ayuda con SUBE">
+      <div class="action-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <span>Ayuda con SUBE</span>
+    </div>
+
+    <div class="action-card" tabindex="0" role="button" aria-label="Contactar operador">
+      <div class="action-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.18 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.5 7.5a16 16 0 006 6l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0120 16.92z"/></svg>
+      </div>
+      <span>Contactar operador</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- FAQ + CANALES -->
+<section class="faq-section" aria-labelledby="faq-heading">
+  <div class="faq-inner">
+
+    <!-- Preguntas frecuentes -->
+    <div class="faq-col">
+      <h2 id="faq-heading">Preguntas Frecuentes</h2>
+      <div class="faq-list">
+
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-ans-1">
+            <div class="faq-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <span class="faq-q">¿Cómo registro mi tarjeta SUBE?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-1" role="region" aria-hidden="true">
+            <div class="faq-answer-inner">
+              Registrar tu tarjeta SUBE es gratuito y podés hacerlo por varios canales:
+              <br><br>
+              <strong>1. Online:</strong> En el sitio oficial de SUBE (sube.gob.ar) con tu DNI y número de tarjeta.<br>
+              <strong>2. Correo Argentino:</strong> En cualquier sucursal del Correo Oficial presentando tu DNI.<br>
+              <strong>3. Terminales de carga SUBE:</strong> En estaciones de subte y puntos habilitados de la CABA.<br>
+              <strong>4. App Mi Argentina:</strong> Desde tu celular, en la sección "Mis Trámites".<br><br>
+              Tené a mano: tu DNI y el número de tu tarjeta SUBE (se encuentra en el frente de la tarjeta). El proceso tarda menos de 5 minutos y te permite acceder a beneficios y a la función de saldo negativo.
+              <br><br>
+              <a href="#" class="faq-tip">
+                Ver guía paso a paso →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-ans-2">
+            <div class="faq-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <span class="faq-q">Olvidé un objeto en el transporte, ¿qué hago?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-2" role="region" aria-hidden="true">
+            <div class="faq-answer-inner">
+              Si olvidaste algo en el colectivo, subte o tren, seguí estos pasos:
+              <br><br>
+              <strong>Paso 1 – Completá el formulario online:</strong> Accedé a la sección "Recuperar objeto perdido" en este portal e ingresá los datos del objeto, línea, fecha y horario aproximado del viaje.<br><br>
+              <strong>Paso 2 – Contactate con la empresa:</strong> Comunicarte directamente con la empresa operadora de la línea. Los datos de contacto están disponibles en la sección "Nuestras Líneas".<br><br>
+              <strong>Paso 3 – Presentate a retirarlo:</strong> Si el objeto fue encontrado, te avisaremos por mail. Podés retirarlo en nuestra sede (Av. Martín García 346, CABA), de lunes a viernes de 9 a 17 hs, presentando tu DNI.<br><br>
+              <strong>Importante:</strong> Los objetos se guardan durante 30 días hábiles. Pasado ese plazo son donados a instituciones benéficas.
+              <br><br>
+              <a href="#" class="faq-tip">Completar formulario de objetos perdidos →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-ans-3">
+            <div class="faq-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <span class="faq-q">¿Dónde consulto los horarios actualizados?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-3" role="region" aria-hidden="true">
+            <div class="faq-answer-inner">
+              Los horarios de todas las líneas están disponibles en tiempo real a través de los siguientes medios:
+              <br><br>
+              <strong>Portal CentroBA:</strong> En la sección "Nuestras Líneas", hacé clic en "Ver recorrido" de la línea que buscás para ver frecuencias y próximas salidas.<br><br>
+              <strong>App CentroBA:</strong> Descargá nuestra aplicación para recibir notificaciones personalizadas y ver tiempos de espera en tiempo real para tus líneas favoritas.<br><br>
+              <strong>Paneles en paradas:</strong> Las paradas principales del Metrobus y las estaciones de subte cuentan con pantallas que informan el próximo arribo en minutos.<br><br>
+              <strong>SMS:</strong> Enviá la sigla de la línea (ej: "L67") al 22365 para recibir el próximo horario de la parada más cercana (costo normal de SMS).<br><br>
+              <strong>Google Maps / Moovit:</strong> Integrados con nuestra base de datos para mostrar horarios actualizados y desvíos vigentes.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-ans-4">
+            <div class="faq-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <span class="faq-q">¿Cómo realizo una queja o sugerencia?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-ans-4" role="region" aria-hidden="true">
+            <div class="faq-answer-inner">
+              Valoramos tu opinión. Podés enviarnos tu queja o sugerencia a través de los siguientes canales:
+              <br><br>
+              <strong>Formulario web:</strong> Completá el formulario en la sección "Contacto" de este portal. Recibís confirmación por email y respondemos en un máximo de 48 horas hábiles.<br><br>
+              <strong>WhatsApp:</strong> Escribinos al +54 11 1234-5678 de lunes a viernes de 8 a 20 hs. Atención por chat en tiempo real.<br><br>
+              <strong>Línea 147:</strong> Atención ciudadana gratuita disponible las 24 horas, los 365 días del año. Menú opción 3 para transporte.<br><br>
+              <strong>Correo electrónico:</strong> Escribinos a contacto@centroba.gob.ar incluyendo línea, fecha, horario y descripción del incidente.<br><br>
+              <strong>En persona:</strong> Podés concurrir a nuestra sede central en Av. Martín García 346, CABA, de lunes a viernes de 8 a 20 hs.<br><br>
+              Todos los reclamos reciben un número de expediente para que puedas hacer seguimiento de tu caso.
+              <br><br>
+              <a href="contacto.html" class="faq-tip">Ir al formulario de contacto →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Canales directos -->
+    <div>
+      <div class="channels-card" aria-label="Canales de atención directa">
+        <h3>Canales Directos</h3>
+
+        <a href="https://wa.me/5411123456789" class="channel-item" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp: +54 11 1234-5678">
+          <div class="ch-icon green" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="ch-info">
+            <strong>WhatsApp</strong>
+            <span>+54 11 1234-5678</span>
+          </div>
+          <svg class="ch-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="tel:0800CENTROBA" class="channel-item" aria-label="Llamar por teléfono: 0800-CENTRO-BA">
+          <div class="ch-icon blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.18 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.5 7.5a16 16 0 006 6l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0120 16.92z"/></svg>
+          </div>
+          <div class="ch-info">
+            <strong>Atención Telefónica</strong>
+            <span>0800-CENTRO-BA</span>
+          </div>
+          <svg class="ch-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <a href="mailto:ayuda@centroba.gob.ar" class="channel-item" aria-label="Enviar correo a ayuda@centroba.gob.ar">
+          <div class="ch-icon yellow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="ch-info">
+            <strong>Correo Electrónico</strong>
+            <span>ayuda@centroba.gob.ar</span>
+          </div>
+          <svg class="ch-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="social-card">
+        <h4>Síguenos en Redes</h4>
+        <div class="social-icons">
+          <button class="social-icon-btn" aria-label="Twitter de CentroBA">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </button>
+          <button class="social-icon-btn" aria-label="Compartir CentroBA">
+            <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <button class="social-icon-btn" aria-label="Instagram de CentroBA">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>CentroBA</a>
+      <p>Transformando el transporte público de la ciudad con tecnología y eficiencia.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Portal</h4>
+      <ul>
+        <li><a href="#">Mapa del Sitio</a></li>
+        <li><a href="#">Transparencia</a></li>
+        <li><a href="#">Datos Abiertos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+        <li><a href="#">Privacidad</a></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter footer-col">
+      <h4>Newsletter</h4>
+      <p>Recibí alertas y novedades en tu mail.</p>
+      <form class="newsletter-row" aria-label="Suscribirse al newsletter" onsubmit="return false;">
+        <input type="email" placeholder="mail@ejemplo.com" aria-label="Dirección de correo electrónico" />
+        <button type="submit">Unirse</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2024 CentroBA – Gobierno de la Ciudad de Buenos Aires</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alertas y Novedades – CentroBA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/alertas.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="CentroBA – Inicio">
+      <div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>
+      CentroBA
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Nuestras líneas</a>
+      <a href="consulta.html">Consulta de Viajes</a>
+      <a href="servicios.html">Servicios de Terminal</a>
+      <a href="alertas.html" class="active">Alertas y novedades</a>
+      <a href="asistencia.html">Asistencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="nav-btn">Iniciar Sesión</button>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" role="dialog" aria-label="Menú móvil">
+  <a href="index.html">Nuestras líneas</a>
+  <a href="consulta.html">Consulta de Viajes</a>
+  <a href="servicios.html">Servicios de Terminal</a>
+  <a href="alertas.html" class="active">Alertas y novedades</a>
+  <a href="asistencia.html">Asistencia</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="#" class="m-login">Iniciar Sesión</a>
+</div>
+
+<!-- BANNER ESTADO -->
+<div class="system-banner" role="status" aria-label="Estado actual del sistema de transporte">
+  <div class="banner-inner">
+    <div class="banner-icon-wrap" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    </div>
+    <div class="banner-text">
+      <h2>Estado del Sistema: Óptimo</h2>
+      <p>92% de las líneas operando en horario regular. Se registran demoras leves en el nodo Obelisco.</p>
+    </div>
+    <div class="banner-right">
+      <p class="banner-time">Última actualización <strong>14:45 HS</strong></p>
+      <button class="btn-dark">Ver Reporte Diario</button>
+    </div>
+  </div>
+</div>
+
+<!-- LAYOUT 3 COLUMNAS -->
+<div class="alerts-page-inner">
+
+  <!-- FILTROS -->
+  <aside aria-label="Filtros de alertas">
+    <div class="filter-panel">
+      <h3>Filtrar Alertas</h3>
+
+      <label class="filter-label" for="filterSearch">Buscar Línea o Barrio</label>
+      <div class="filter-search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="filterSearch" placeholder="Ej: Línea 60, Palermo..." aria-label="Buscar línea o barrio" />
+      </div>
+
+      <p class="filter-label">Tipo de Incidente</p>
+      <div class="filter-chips" role="group" aria-label="Filtrar por tipo de incidente">
+        <button class="chip active">Todos</button>
+        <button class="chip">Demoras</button>
+        <button class="chip">Cortes</button>
+        <button class="chip">Desvíos</button>
+      </div>
+
+      <p class="filter-label">Barrios Afectados</p>
+      <div class="filter-checks">
+        <label><input type="checkbox" /> San Nicolás (Centro)</label>
+        <label><input type="checkbox" /> Palermo</label>
+        <label><input type="checkbox" /> Caballito</label>
+        <label><input type="checkbox" /> Belgrano</label>
+      </div>
+
+      <button class="btn-clear-filters">Limpiar Filtros</button>
+
+      <div class="weather-card" aria-label="Clima actual en la ciudad">
+        <div class="w-icon" aria-hidden="true">☀️</div>
+        <div class="w-temp">24°C Despejado</div>
+        <p class="w-desc">Visibilidad normal. Ideal para trayectos en bicicleta.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ALERTAS -->
+  <main aria-labelledby="alerts-heading">
+    <div class="alerts-col-header">
+      <h2 id="alerts-heading">Alertas Activas (4)</h2>
+      <button class="sort-btn" aria-label="Ordenar por prioridad">
+        <svg viewBox="0 0 24 24"><line x1="21" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="3" y2="18"/></svg>
+        Ordenar por Prioridad
+      </button>
+    </div>
+
+    <div class="alerts-list" role="list">
+
+      <!-- ALERT 1 – Urgente -->
+      <article class="alert-card" role="listitem">
+        <div class="alert-card-top">
+          <div class="alert-ico danger" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          </div>
+          <div class="alert-card-meta">
+            <h3>Corte Total de Calzada</h3>
+            <div class="alert-tags">
+              <span class="sev sev-urgente">URGENTE</span>
+              <span class="alert-location">Av. 9 de Julio y Corrientes</span>
+            </div>
+          </div>
+          <span class="alert-time">14:12 HS</span>
+        </div>
+        <div class="alert-body">
+          Manifestación en zona céntrica provoca cierre total de carriles centrales. Se prevé un impacto significativo en el tránsito de las líneas que circulan por el corredor central.
+        </div>
+        <div class="affected-lines">
+          <span>Líneas afectadas:</span>
+          <span class="line-pill ln-blue">7</span>
+          <span class="line-pill ln-gray">24</span>
+          <span class="line-pill ln-gray">59</span>
+          <span class="line-pill ln-gray">105</span>
+        </div>
+        <div class="alert-footer">
+          <span class="alert-est">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Fin estimado: 17:30 HS
+          </span>
+          <a href="#" class="link-arrow">
+            Ver desvíos sugeridos
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- ALERT 2 – Moderado -->
+      <article class="alert-card" role="listitem">
+        <div class="alert-card-top">
+          <div class="alert-ico warning" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="alert-card-meta">
+            <h3>Demoras por Obra</h3>
+            <div class="alert-tags">
+              <span class="sev sev-moderado">MODERADO</span>
+              <span class="alert-location">Av. Santa Fe y Pueyrredón</span>
+            </div>
+          </div>
+          <span class="alert-time">13:45 HS</span>
+        </div>
+        <div class="alert-body">
+          Trabajos de bacheo de emergencia. Reducción de carril derecho. Se recomienda circular por vías alternativas como Av. Córdoba o Av. Las Heras.
+        </div>
+        <div class="affected-lines">
+          <span>Líneas afectadas:</span>
+          <span class="line-pill ln-gray">12</span>
+          <span class="line-pill ln-red">39</span>
+          <span class="line-pill ln-gray">68</span>
+        </div>
+        <div class="alert-footer">
+          <span class="alert-est">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Fin estimado: 20:00 HS
+          </span>
+          <a href="#" class="link-arrow">
+            Ver más
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- ALERT 3 – Planificado -->
+      <article class="alert-card" role="listitem">
+        <div class="alert-card-top">
+          <div class="alert-ico info" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          </div>
+          <div class="alert-card-meta">
+            <h3>Mantenimiento Programado</h3>
+            <div class="alert-tags">
+              <span class="sev sev-planificado">PLANIFICADO</span>
+              <span class="alert-location">Línea D – Subte</span>
+            </div>
+          </div>
+          <span class="alert-time">Ayer 18:00 HS</span>
+        </div>
+        <div class="alert-body">
+          Modernización de sistema de señales. Estación Facultad de Medicina cerrada temporalmente. Se habilitaron colectivos de reemplazo con paradas sobre Marcelo T. de Alvear.
+        </div>
+        <div class="alert-dates">
+          <span>
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Desde: 12/05
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Hasta: 25/05
+          </span>
+        </div>
+        <div class="alert-footer" style="margin-top:10px;">
+          <span class="alert-est">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Uso de colectivos alternativos
+          </span>
+          <a href="#" class="link-arrow">
+            Ver cronograma
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <button class="load-more-btn" aria-label="Cargar alertas anteriores">
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      Cargar alertas anteriores
+    </button>
+  </main>
+
+  <!-- NOVEDADES -->
+  <aside class="news-col" aria-label="Novedades de transporte">
+    <h3>Novedades</h3>
+    <div class="news-feed">
+
+      <div class="news-item">
+        <div class="news-tl">
+          <div class="news-dot active"></div>
+          <div class="news-line"></div>
+        </div>
+        <div class="news-body">
+          <div class="news-tag-row">
+            <span class="news-cat transport">Transporte</span>
+            <span class="news-when">Hoy</span>
+          </div>
+          <h4>Nuevas unidades con aire acondicionado para la Línea 152</h4>
+          <img class="news-img" src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=360&q=70" alt="Nuevas unidades de colectivo con aire acondicionado" loading="lazy" />
+          <a href="#" class="news-link">Leer más →</a>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-tl">
+          <div class="news-dot active"></div>
+          <div class="news-line"></div>
+        </div>
+        <div class="news-body">
+          <div class="news-tag-row">
+            <span class="news-cat ecobici">EcoBici</span>
+            <span class="news-when">Ayer</span>
+          </div>
+          <h4>Se inauguran 5 nuevas estaciones en zona sur</h4>
+          <p>Barracas y La Boca suman puntos estratégicos de conexión...</p>
+          <a href="#" class="news-link">Ver mapa →</a>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <div class="news-tl">
+          <div class="news-dot"></div>
+        </div>
+        <div class="news-body">
+          <div class="news-tag-row">
+            <span class="news-cat tech">Tecnología</span>
+            <span class="news-when">2 días</span>
+          </div>
+          <h4>Ya podés cargar tu SUBE mediante QR en terminales</h4>
+          <a href="#" class="news-link">Ver instructivo →</a>
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>CentroBA</a>
+      <p>Portal oficial de transporte y movilidad de la Ciudad Autónoma de Buenos Aires.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Mapa del Sitio</h4>
+      <ul>
+        <li><a href="index.html">Nuestras Líneas</a></li>
+        <li><a href="alertas.html">Alertas</a></li>
+        <li><a href="#">EcoBici</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Asistencia</h4>
+      <ul>
+        <li><a href="asistencia.html">Preguntas Frecuentes</a></li>
+        <li><a href="#">Canales de Contacto</a></li>
+        <li><a href="#">Denuncias</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="#">Privacidad</a></li>
+        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2024 CentroBA – Gobierno de la Ciudad de Buenos Aires</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

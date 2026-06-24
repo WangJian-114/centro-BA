@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:www.retiro.com.ar)",
+      "WebFetch(domain:terminalesdemicro.com.ar)",
+      "WebFetch(domain:terminaldeomnibus-retiro-ciudaddebuenosaires.com)",
+      "WebFetch(domain:ventanita.com.ar)"
+    ]
+  }
+}

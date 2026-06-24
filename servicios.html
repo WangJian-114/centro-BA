@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios de la Terminal – CentroBA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/servicios.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="CentroBA – Inicio">
+      <div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>
+      CentroBA
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Nuestras líneas</a>
+      <a href="consulta.html">Consulta de Viajes</a>
+      <a href="servicios.html" class="active">Servicios de Terminal</a>
+      <a href="alertas.html">Alertas y novedades</a>
+      <a href="asistencia.html">Asistencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="nav-btn">Iniciar Sesión</button>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" role="dialog" aria-label="Menú móvil">
+  <a href="index.html">Nuestras líneas</a>
+  <a href="consulta.html">Consulta de Viajes</a>
+  <a href="servicios.html" class="active">Servicios de Terminal</a>
+  <a href="alertas.html">Alertas y novedades</a>
+  <a href="asistencia.html">Asistencia</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="#" class="m-login">Iniciar Sesión</a>
+</div>
+
+<!-- HERO -->
+<section class="servicios-hero" aria-labelledby="serv-heading">
+  <img class="servicios-hero-img" src="https://images.unsplash.com/photo-1669360109634-8386c704a506?w=1400&q=80" alt="" aria-hidden="true" />
+  <div class="servicios-hero-inner">
+    <h1 id="serv-heading">Servicios de la Terminal</h1>
+    <p>Todo lo que necesitás en un solo lugar. Conocé los servicios disponibles en el Centro de Transporte CentroBA.</p>
+  </div>
+</section>
+
+<!-- TABS DE NAVEGACIÓN -->
+<nav class="servicios-tabs-bar" aria-label="Categorías de servicios">
+  <div class="servicios-tabs" role="tablist">
+    <button class="stab active" role="tab" aria-selected="true"  onclick="scrollTo('banos')">
+      <svg viewBox="0 0 24 24"><path d="M7 18H4a1 1 0 01-1-1V5a1 1 0 011-1h16a1 1 0 011 1v4M9 21H6a1 1 0 01-1-1v-4M14 14h2M14 18h2"/></svg>
+      Baños
+    </button>
+    <button class="stab" role="tab" aria-selected="false" onclick="scrollTo('informacion')">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+      Información
+    </button>
+    <button class="stab" role="tab" aria-selected="false" onclick="scrollTo('gastronomia')">
+      <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+      Gastronomía
+    </button>
+    <button class="stab" role="tab" aria-selected="false" onclick="scrollTo('espera')">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      Áreas de Espera
+    </button>
+    <button class="stab" role="tab" aria-selected="false" onclick="scrollTo('estacionamiento')">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg>
+      Estacionamiento
+    </button>
+    <button class="stab" role="tab" aria-selected="false" onclick="scrollTo('mapa')">
+      <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+      Mapa de la Terminal
+    </button>
+  </div>
+</nav>
+
+<!-- SERVICIOS -->
+<main class="servicios-section" aria-label="Lista de servicios disponibles">
+  <div class="servicios-inner">
+
+    <!-- BAÑOS -->
+    <section class="servicios-cat" id="banos" aria-labelledby="banos-h">
+      <div class="cat-header">
+        <div class="cat-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M7 18H4a1 1 0 01-1-1V5a1 1 0 011-1h16a1 1 0 011 1v4M9 21H6a1 1 0 01-1-1v-4M14 14h2M14 18h2"/></svg>
+        </div>
+        <h2 id="banos-h">Baños</h2>
+      </div>
+      <div class="cat-banner" role="img" aria-label="Baños de la Terminal de Retiro">
+        <img src="https://images.unsplash.com/photo-1759497904878-82c9bb21b2f6?w=1200&q=80" alt="Baños modernos con lavabos y cabinas" loading="lazy" />
+        <div class="cat-banner-overlay"><span>Sanitarios en Nivel 1 y Nivel 2 · Acceso para personas con discapacidad</span></div>
+      </div>
+      <div class="servicio-grid">
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Sanitarios – Nivel 1</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 1 – Sector Encomiendas</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas</div>
+          <p class="sc-desc">Baños públicos en el nivel de encomiendas y emergencias. Acceso habilitado para personas con movilidad reducida.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Sanitarios – Nivel 2 (Plataformas)</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 – Zona de Plataformas de Salida</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas</div>
+          <p class="sc-desc">Sanitarios para pasajeros en zona de embarque. Disponibles junto a los locales comerciales y confiterías del Nivel 2.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Baños con Duchas</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 1 – Concesión privada</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>06:00 – 22:00 hs</div>
+          <p class="sc-desc">Servicio de baños con duchas concesionado para viajeros de larga distancia. Requiere pago en el local.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Sanitarios – Nivel 3 (Boleterías)</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 3 – Sector Boleterías</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas</div>
+          <p class="sc-desc">Sanitarios accesibles en la planta de venta de pasajes. Señalética adaptada para personas con discapacidad visual.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMACIÓN -->
+    <section class="servicios-cat" id="informacion" aria-labelledby="info-h">
+      <div class="cat-header">
+        <div class="cat-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h2 id="info-h">Oficinas de Información</h2>
+      </div>
+      <div class="cat-banner" role="img" aria-label="Oficinas de información y atención al pasajero">
+        <img src="https://images.unsplash.com/photo-1669360109634-8386c704a506?w=1200&q=80" alt="Pasajeros en la terminal de Retiro" loading="lazy" />
+        <div class="cat-banner-overlay"><span>Tel: (011) 4310-0700 · CNRT: 0800-333-0300 · 24 horas</span></div>
+      </div>
+      <div class="servicio-grid">
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Centro de Atención al Usuario – CNRT</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 – Locales 129 y 130</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lunes a Domingo · Horario comercial</div>
+          <p class="sc-desc">Oficina oficial de la Comisión Nacional de Regulación del Transporte (CNRT). Reclamos, asesoramiento e información sobre empresas. Tel: 0800-333-0300.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Mesa de Informes</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 – Zona de Plataformas</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Tel: (011) 4310-0700</div>
+          <p class="sc-desc">Información general sobre horarios de salida y llegada de micros, destinos y empresas operadoras. La terminal opera las 24 hs los 365 días del año.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Sucursal Banco Ciudad</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 3 – Zona de Boleterías</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Horario bancario · L a V</div>
+          <p class="sc-desc">Sucursal bancaria del Banco Ciudad de Buenos Aires. Cajeros automáticos disponibles también en Planta Baja (Banco Ciudad y Banco Nación) y terminales Link en Nivel 3.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Servicio de Emergencias Médicas</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 1 – Sector Administrativo</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas · Todos los días</div>
+          <p class="sc-desc">Servicio médico de urgencias permanente dentro de la terminal. Atención inmediata para pasajeros y personal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GASTRONOMÍA -->
+    <section class="servicios-cat" id="gastronomia" aria-labelledby="gastro-h">
+      <div class="cat-header">
+        <div class="cat-icon amber" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+        </div>
+        <h2 id="gastro-h">Locales Gastronómicos</h2>
+      </div>
+      <div class="cat-banner" role="img" aria-label="Locales gastronómicos del Nivel 2 de la Terminal Retiro">
+        <img src="https://images.unsplash.com/photo-1751151015757-5f3aac54d2ad?w=1200&q=80" alt="Café y confitería en la terminal" loading="lazy" />
+        <div class="cat-banner-overlay"><span>Nivel 2 · Confiterías y locales comerciales · 07:00 a 23:00 hs</span></div>
+      </div>
+      <div class="servicio-grid">
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Altos de Retiro</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 – Zona de Plataformas</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>07:00 – 23:00 hs</div>
+          <p class="sc-desc">Restaurante de categoría dentro de la terminal. Menú variado con platos del día, minutas y bebidas. Ideal para viajes de larga distancia.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Confiterías – Nivel 2</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 – Zona Comercial</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>07:00 – 23:00 hs</div>
+          <p class="sc-desc">Bares y confiterías con café, medialunas, sándwiches y bebidas. Varios locales distribuidos en el Nivel 2 junto a los andenes de partida.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Kioscos y Locales Comerciales</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 – Distribuidos en plataformas</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>07:00 – 23:00 hs</div>
+          <p class="sc-desc">Kioscos con snacks, golosinas, diarios, revistas y artículos de viaje. También locales de recuerdos y souvenirs de Buenos Aires.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Locales de Venta Varios</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 y Nivel 3</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>07:00 – 23:00 hs</div>
+          <p class="sc-desc">Negocios de indumentaria, accesorios de viaje, artículos de librería y farmacias. Variedad de opciones para pasajeros en tránsito.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁREAS DE ESPERA -->
+    <section class="servicios-cat" id="espera" aria-labelledby="espera-h">
+      <div class="cat-header">
+        <div class="cat-icon purple" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h2 id="espera-h">Áreas de Espera</h2>
+      </div>
+      <div class="cat-banner" role="img" aria-label="Sala de espera Terminal de Retiro">
+        <img src="https://images.unsplash.com/photo-1760654343460-e38c0db08a71?w=1200&q=80" alt="Sala de espera con pasajeros y grandes ventanales" loading="lazy" />
+        <div class="cat-banner-overlay"><span>Zona comercial abierta 24 hs · WiFi gratis "BA WiFi" · Accesos adaptados</span></div>
+      </div>
+      <div class="servicio-grid">
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Sala de Espera General</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 y Nivel 3 – Zona Comercial</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas · 365 días</div>
+          <p class="sc-desc">La terminal opera sin interrupciones. La zona de boleterías (Nivel 3) es el sector más seguro para esperar. Confiterías y comercios disponibles de 07:00 a 23:00 hs.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Sala VIP – Cama Suite</span><span class="sc-open disponible">Según empresa</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 – Sector Plataformas</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Según horario de servicio</div>
+          <p class="sc-desc">Sala de espera VIP disponible para pasajeros con boletos de servicios Cama Suite de empresas seleccionadas. Comodidades adicionales incluidas en el pasaje.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Estación de Lectura Ernesto Sábato</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Terminal de Retiro</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Horario comercial</div>
+          <p class="sc-desc">Espacio cultural con libros de libre acceso para disfrutar durante la espera. Nombrado en honor al escritor argentino Ernesto Sábato.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">WiFi Gratuito "BA WiFi"</span><span class="sc-open abierto">Disponible</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Todo el edificio (mayor señal en zona comercial)</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas</div>
+          <p class="sc-desc">Conectate a la red "BA WiFi" sin contraseña. La señal es más estable en la zona comercial del Nivel 3. Sin límite de tiempo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIONAMIENTO -->
+    <section class="servicios-cat" id="estacionamiento" aria-labelledby="estac-h">
+      <div class="cat-header">
+        <div class="cat-icon cyan" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg>
+        </div>
+        <h2 id="estac-h">Estacionamiento</h2>
+      </div>
+      <div class="cat-banner" role="img" aria-label="Playa de estacionamiento Terminal de Retiro">
+        <img src="https://images.unsplash.com/photo-1758448721161-7b3df5ec04b3?w=1200&q=80" alt="Estacionamiento cubierto moderno" loading="lazy" />
+        <div class="cat-banner-overlay"><span>327 vehículos · Acceso por Av. Ramos Mejía · 24 horas</span></div>
+      </div>
+      <div class="servicio-grid">
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Playa de Estacionamiento</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 1 – Acceso por Av. Ramos Mejía</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas · 365 días</div>
+          <p class="sc-desc">Capacidad para 327 vehículos particulares. Ubicado en Nivel 1, próximo a la galería de espera. Tarifas 2025: $1.200 (15 min) · $4.500 (1 hora) · $28.000 (24 hs).</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Parada de Taxis Autorizados</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 1 – Acceso Principal</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas</div>
+          <p class="sc-desc">Parada oficial de taxis habilitados en el Nivel 1 de la terminal. Solo taxis con habilitación oficial del Gobierno de CABA. No utilices servicios no autorizados.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Cabinas de Remises</span><span class="sc-open abierto">Abierto</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Nivel 2 – Plataformas de Llegada y Partida</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas</div>
+          <p class="sc-desc">Cabinas de remises habilitadas en el sector de plataformas. Servicio con precio pactado anticipadamente. Empresas autorizadas por la terminal.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="sc-top"><span class="sc-name">Transporte Público – Cómo Llegar</span><span class="sc-open abierto">Disponible</span></div>
+          <div class="sc-location"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Av. Antártida Argentina y Calle 10, Retiro</div>
+          <div class="sc-hours"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>24 horas</div>
+          <p class="sc-desc">Subte Línea C – Estación Retiro. Trenes Mitre, Belgrano Norte y San Martín. Más de 30 líneas de colectivos (5, 6, 7, 9, 20, 23, 26, 33, 50, 56, 70, 75, 92, entre otras).</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- MAPA INTERACTIVO -->
+<section class="mapa-section" id="mapa" aria-labelledby="mapa-heading">
+  <div class="mapa-inner">
+    <div class="mapa-hd">
+      <h2 id="mapa-heading">Mapa de la Terminal</h2>
+      <p>Hacé clic en cada zona para conocer más detalles. El mapa muestra la planta baja del Centro de Transporte CentroBA.</p>
+    </div>
+    <div class="mapa-layout">
+
+      <!-- SVG MAP -->
+      <div class="mapa-svg-wrap">
+        <svg id="mapaSVG" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plano del Centro de Transporte CentroBA" focusable="false">
+
+          <!-- Fondo general -->
+          <rect x="0" y="0" width="800" height="520" rx="8" fill="#f8fafc"/>
+
+          <!-- Título del mapa -->
+          <text x="400" y="28" text-anchor="middle" font-family="Inter,sans-serif" font-size="14" font-weight="700" fill="#374151">CENTRO DE TRANSPORTE CENTROBA — PLANTA BAJA</text>
+
+          <!-- ─── PLATAFORMAS (arriba) ─── -->
+          <g class="mapa-zone" data-name="Plataformas 1–5" data-loc="Sector Norte – Planta Baja" tabindex="0" role="button" aria-label="Plataformas 1 a 5">
+            <rect x="40" y="46" width="220" height="140" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+            <text x="150" y="96"  text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#1e40af">PLATAFORMAS</text>
+            <text x="150" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1e40af">1 · 2 · 3 · 4 · 5</text>
+            <!-- Bus icons -->
+            <rect x="56" y="130" width="36" height="22" rx="3" fill="#2563eb"/>
+            <text x="74" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="white">BUS</text>
+            <rect x="100" y="130" width="36" height="22" rx="3" fill="#2563eb"/>
+            <text x="118" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="white">BUS</text>
+            <rect x="144" y="130" width="36" height="22" rx="3" fill="#2563eb"/>
+            <text x="162" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="white">BUS</text>
+          </g>
+
+          <g class="mapa-zone" data-name="Plataformas 6–10" data-loc="Sector Sur – Planta Baja" tabindex="0" role="button" aria-label="Plataformas 6 a 10">
+            <rect x="540" y="46" width="220" height="140" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+            <text x="650" y="96"  text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#1e40af">PLATAFORMAS</text>
+            <text x="650" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#1e40af">6 · 7 · 8 · 9 · 10</text>
+            <rect x="556" y="130" width="36" height="22" rx="3" fill="#2563eb"/>
+            <text x="574" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="white">BUS</text>
+            <rect x="600" y="130" width="36" height="22" rx="3" fill="#2563eb"/>
+            <text x="618" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="white">BUS</text>
+            <rect x="644" y="130" width="36" height="22" rx="3" fill="#2563eb"/>
+            <text x="662" y="145" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="white">BUS</text>
+          </g>
+
+          <!-- ─── HALL ESPERA (centro-arriba) ─── -->
+          <g class="mapa-zone" data-name="Sala de Espera Principal" data-loc="1er Piso – Zona Central" tabindex="0" role="button" aria-label="Sala de espera principal">
+            <rect x="280" y="46" width="240" height="140" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+            <text x="400" y="96"  text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#5b21b6">SALA DE</text>
+            <text x="400" y="112" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#5b21b6">ESPERA</text>
+            <text x="400" y="130" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#6d28d9">280 asientos · WiFi · USB</text>
+          </g>
+
+          <!-- ─── SEPARADOR (pasillo) ─── -->
+          <rect x="0" y="196" width="800" height="20" fill="#e2e8f0"/>
+          <text x="400" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" font-weight="600">PASILLO PRINCIPAL</text>
+
+          <!-- ─── FILA MEDIA ─── -->
+
+          <!-- Gastronomía -->
+          <g class="mapa-zone" data-name="Locales Gastronómicos" data-loc="Planta Baja – Locales 2 al 14" tabindex="0" role="button" aria-label="Zona gastronómica">
+            <rect x="40" y="226" width="180" height="100" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+            <text x="130" y="268" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#92400e">GASTRONOMÍA</text>
+            <text x="130" y="285" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#b45309">Café · Kiosco · Restaurante</text>
+          </g>
+
+          <!-- Oficina Información -->
+          <g class="mapa-zone" data-name="Oficinas de Información" data-loc="Hall Principal – Planta Baja" tabindex="0" role="button" aria-label="Oficinas de información">
+            <rect x="240" y="226" width="140" height="100" rx="6" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+            <text x="310" y="265" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#065f46">INFORMACIÓN</text>
+            <text x="310" y="282" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#047857">SUBE · Atención</text>
+          </g>
+
+          <!-- Baños planta baja -->
+          <g class="mapa-zone" data-name="Baños Planta Baja" data-loc="Sector Central – Planta Baja" tabindex="0" role="button" aria-label="Baños en planta baja">
+            <rect x="400" y="226" width="100" height="100" rx="6" fill="#cffafe" stroke="#0891b2" stroke-width="1.5"/>
+            <text x="450" y="265" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#0e7490">BAÑOS</text>
+            <text x="450" y="280" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#0891b2">♀ ♂ ♿</text>
+          </g>
+
+          <!-- Familias -->
+          <g class="mapa-zone" data-name="Sala Familias y Niños" data-loc="Planta Baja – Sector Oeste" tabindex="0" role="button" aria-label="Sala para familias y niños">
+            <rect x="520" y="226" width="120" height="100" rx="6" fill="#fce7f3" stroke="#be185d" stroke-width="1.5"/>
+            <text x="580" y="265" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="700" fill="#9d174d">FAMILIAS</text>
+            <text x="580" y="281" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#be185d">👶 Lactario</text>
+          </g>
+
+          <!-- Accesibilidad -->
+          <g class="mapa-zone" data-name="Sala de Accesibilidad" data-loc="Sector Norte – Planta Baja" tabindex="0" role="button" aria-label="Sala de accesibilidad">
+            <rect x="660" y="226" width="100" height="100" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+            <text x="710" y="261" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#166534">ACCESI-</text>
+            <text x="710" y="275" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#166534">BILIDAD</text>
+            <text x="710" y="290" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#16a34a">♿</text>
+          </g>
+
+          <!-- Pasillo 2 -->
+          <rect x="0" y="336" width="800" height="16" fill="#e2e8f0"/>
+          <text x="400" y="348" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8" font-weight="600">CORREDOR DE ACCESO</text>
+
+          <!-- ─── FILA INFERIOR ─── -->
+
+          <!-- Estacionamiento -->
+          <g class="mapa-zone" data-name="Playa de Estacionamiento" data-loc="Subsuelo – Acceso Av. Martín García" tabindex="0" role="button" aria-label="Playa de estacionamiento">
+            <rect x="40" y="362" width="240" height="120" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+            <text x="160" y="412" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#075985">ESTACIONAMIENTO</text>
+            <text x="160" y="430" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#0369a1">280 autos · Motos · EV</text>
+          </g>
+
+          <!-- Acceso Principal -->
+          <g class="mapa-zone" data-name="Acceso Principal" data-loc="Planta Baja – Frente Av. Martín García" tabindex="0" role="button" aria-label="Acceso principal al edificio">
+            <rect x="300" y="362" width="200" height="120" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="2" stroke-dasharray="6 3"/>
+            <text x="400" y="408" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#334155">ACCESO</text>
+            <text x="400" y="425" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#475569">PRINCIPAL</text>
+            <!-- Flecha entrada -->
+            <polygon points="390,450 410,450 400,465" fill="#475569"/>
+          </g>
+
+          <!-- Acceso Secundario + Motos/Bicis -->
+          <g class="mapa-zone" data-name="Acceso Secundario – Bicicletas" data-loc="Acceso Norte – Exterior" tabindex="0" role="button" aria-label="Acceso secundario y bicicletero">
+            <rect x="520" y="362" width="240" height="120" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+            <text x="640" y="408" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#166534">ACCESO NORTE</text>
+            <text x="640" y="426" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" fill="#15803d">Bicicletas · EcoBici · Motos</text>
+          </g>
+
+          <!-- Norte indicator -->
+          <g transform="translate(750,480)">
+            <circle cx="0" cy="0" r="16" fill="white" stroke="#e2e8f0" stroke-width="1.5"/>
+            <text x="0" y="-4" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="900" fill="#1a2e5a">N</text>
+            <polygon points="0,-14 3,-4 0,-8 -3,-4" fill="#1a2e5a"/>
+          </g>
+
+          <!-- Scale bar -->
+          <g transform="translate(40,500)">
+            <line x1="0" y1="0" x2="60" y2="0" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="0" y1="-4" x2="0" y2="4" stroke="#94a3b8" stroke-width="1.5"/>
+            <line x1="60" y1="-4" x2="60" y2="4" stroke="#94a3b8" stroke-width="1.5"/>
+            <text x="30" y="-7" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#94a3b8">~50m</text>
+          </g>
+
+        </svg>
+      </div>
+
+      <!-- LEYENDA -->
+      <div class="mapa-legend" aria-label="Leyenda del mapa">
+        <h4>Leyenda</h4>
+        <div class="legend-list">
+          <div class="legend-item" data-zone="Plataformas 1–5">
+            <div class="legend-dot" style="background:#2563eb;"></div>
+            <span>Plataformas / Andenes</span>
+          </div>
+          <div class="legend-item" data-zone="Sala de Espera Principal">
+            <div class="legend-dot" style="background:#7c3aed;"></div>
+            <span>Sala de Espera</span>
+          </div>
+          <div class="legend-item" data-zone="Locales Gastronómicos">
+            <div class="legend-dot" style="background:#d97706;"></div>
+            <span>Gastronomía</span>
+          </div>
+          <div class="legend-item" data-zone="Oficinas de Información">
+            <div class="legend-dot" style="background:#059669;"></div>
+            <span>Información / SUBE</span>
+          </div>
+          <div class="legend-item" data-zone="Baños Planta Baja">
+            <div class="legend-dot" style="background:#0891b2;"></div>
+            <span>Baños</span>
+          </div>
+          <div class="legend-item" data-zone="Sala Familias y Niños">
+            <div class="legend-dot" style="background:#be185d;"></div>
+            <span>Sala Familias</span>
+          </div>
+          <div class="legend-item" data-zone="Sala de Accesibilidad">
+            <div class="legend-dot" style="background:#16a34a;"></div>
+            <span>Accesibilidad</span>
+          </div>
+          <div class="legend-item" data-zone="Playa de Estacionamiento">
+            <div class="legend-dot" style="background:#0284c7;"></div>
+            <span>Estacionamiento</span>
+          </div>
+          <div class="legend-item" data-zone="Acceso Principal">
+            <div class="legend-dot" style="background:#475569;border:2px dashed #475569;background:white;"></div>
+            <span>Accesos</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>CentroBA</a>
+      <p>Impulsando la movilidad urbana con tecnología y compromiso ciudadano.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="index.html">Nuestras Líneas</a></li>
+        <li><a href="consulta.html">Consulta de Viajes</a></li>
+        <li><a href="servicios.html">Servicios de Terminal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Soporte</h4>
+      <ul>
+        <li><a href="alertas.html">Alertas y Novedades</a></li>
+        <li><a href="asistencia.html">Asistencia al Pasajero</a></li>
+        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Institucional</h4>
+      <ul>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2024 CentroBA – Gobierno de la Ciudad de Buenos Aires</span>
+      <span>Versión 2.4.0</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+<button class="chatbot-fab" id="chatFab" aria-label="Abrir asistente virtual" aria-expanded="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+  <span class="badge-notif" aria-hidden="true">1</span>
+</button>
+
+<div class="chatbot-panel" id="chatPanel" role="dialog" aria-label="Asistente virtual CentroBA" aria-modal="true">
+  <div class="chat-header">
+    <div class="chat-avatar" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    </div>
+    <div class="chat-header-info">
+      <strong>Asistente CentroBA</strong>
+      <span>En línea</span>
+    </div>
+    <button class="chat-close" id="chatClose" aria-label="Cerrar chatbot">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+    <div class="msg bot">
+      <div class="msg-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div>
+        <div class="msg-bubble">¡Hola! Soy el asistente virtual de CentroBA. ¿En qué puedo ayudarte hoy?</div>
+        <div class="quick-replies">
+          <button class="qreply" data-q="horarios">Horarios</button>
+          <button class="qreply" data-q="baños">Baños</button>
+          <button class="qreply" data-q="estacionamiento">Estacionamiento</button>
+          <button class="qreply" data-q="sube">SUBE</button>
+          <button class="qreply" data-q="wifi">WiFi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Escribí tu consulta..." aria-label="Escribí tu mensaje al asistente" />
+    <button class="chat-send" id="chatSend" aria-label="Enviar mensaje">
+      <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+</div>
+
+<div id="mapTooltip" role="tooltip">
+  <div class="tt-title" id="ttTitle"></div>
+  <div class="tt-loc"   id="ttLoc"></div>
+</div>
+
+<script src="main.js"></script>
+<script>
+/* ── Tabs de servicios ── */
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.stab').forEach(t => t.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+}
+
+/* ── Mapa SVG: tooltip ── */
+const tooltip = document.getElementById('mapTooltip');
+const ttTitle  = document.getElementById('ttTitle');
+const ttLoc    = document.getElementById('ttLoc');
+
+document.querySelectorAll('.mapa-zone').forEach(zone => {
+  zone.addEventListener('mouseenter', e => {
+    ttTitle.textContent = zone.dataset.name;
+    ttLoc.textContent   = zone.dataset.loc;
+    tooltip.style.display = 'block';
+  });
+  zone.addEventListener('mousemove', e => {
+    tooltip.style.left = (e.clientX + 14) + 'px';
+    tooltip.style.top  = (e.clientY - 40) + 'px';
+  });
+  zone.addEventListener('mouseleave', () => {
+    tooltip.style.display = 'none';
+  });
+  zone.addEventListener('click', () => {
+    const name = zone.dataset.name;
+    const cat  = name.includes('Plataforma') ? 'banos'
+               : name.includes('Espera')      ? 'espera'
+               : name.includes('Gastron')     ? 'gastronomia'
+               : name.includes('Información') ? 'informacion'
+               : name.includes('Baños')       ? 'banos'
+               : name.includes('Estacion')    ? 'estacionamiento'
+               : null;
+    if (cat) document.getElementById(cat)?.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+  zone.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); zone.click(); }
+  });
+});
+
+/* ── Leyenda del mapa ── */
+document.querySelectorAll('.legend-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const name = item.dataset.zone;
+    const zone = document.querySelector(`.mapa-zone[data-name="${name}"]`);
+    if (zone) zone.dispatchEvent(new MouseEvent('click'));
+  });
+});
+
+/* ── Chatbot ── */
+const FAQs = {
+  horarios:        '🕐 La terminal opera de 05:00 a 00:30 hs. Los servicios nocturnos tienen horario reducido. Algunos kioscos permanecen abiertos las 24hs.',
+  baños:           '🚻 Hay baños en Planta Baja Sector Norte y Sur, y en la Zona de Plataformas (1er piso). El biceñario familiar está en Sector Central. Todos cuentan con acceso para discapacitados.',
+  estacionamiento: '🅿️ La playa de autos está en el Subsuelo (acceso por Av. Martín García). Tarifa: $800/hora o $4.500/día. Hay 6 puntos de carga para vehículos eléctricos.',
+  sube:            '💳 El módulo SUBE está en Acceso Norte, Planta Baja. Horario: L a V de 07:00 a 20:00 hs. También hay terminales de autoservicio disponibles las 24hs.',
+  wifi:            '📶 El WiFi gratuito está disponible en toda la Sala de Espera Principal (1er Piso) y en el Punto Digital. Conectate a la red "CentroBA_WiFi" sin contraseña.',
+  comida:          '🍕 La zona gastronómica cuenta con: Café Central (05:30–23:00), El Rápido (07:00–22:00), Kiosco 24hs, Heladería Patagonia y Bar El Mirador en la terraza.',
+  accesibilidad:   '♿ Contamos con rampas en todos los accesos, sala de accesibilidad en Planta Baja Norte, intérprete LSA en horario comercial, y señalética en braille.',
+  taxi:            '🚕 La parada de taxis está en el Acceso Principal sobre Av. Martín García. También podés pedir Uber o Cabify desde el área de espera del Acceso Norte.',
+  objetos:         '🔍 La oficina de Objetos Perdidos está en el Subsuelo Sector B, abierta L a V de 09:00 a 17:00 hs. También podés hacer la denuncia online en la sección Asistencia.',
+  lineas:          '🚌 Desde esta terminal operan más de 134 líneas de colectivos. Consultá la sección "Nuestras Líneas" en el inicio para ver recorridos y horarios en tiempo real.',
+};
+
+function keyword(msg) {
+  const m = msg.toLowerCase();
+  if (m.includes('hora') || m.includes('cuando') || m.includes('cuándo')) return 'horarios';
+  if (m.includes('baño') || m.includes('sanitario') || m.includes('wc'))  return 'baños';
+  if (m.includes('estacion') || m.includes('auto') || m.includes('auto') || m.includes('parking')) return 'estacionamiento';
+  if (m.includes('sube') || m.includes('tarjeta') || m.includes('carga')) return 'sube';
+  if (m.includes('wifi') || m.includes('internet') || m.includes('conex')) return 'wifi';
+  if (m.includes('comida') || m.includes('comer') || m.includes('rest') || m.includes('café')) return 'comida';
+  if (m.includes('access') || m.includes('silla') || m.includes('disca') || m.includes('rampa')) return 'accesibilidad';
+  if (m.includes('taxi') || m.includes('uber') || m.includes('remis')) return 'taxi';
+  if (m.includes('perd') || m.includes('olvid') || m.includes('objeto')) return 'objetos';
+  if (m.includes('línea') || m.includes('colect') || m.includes('bus'))  return 'lineas';
+  return null;
+}
+
+function addMsg(text, type = 'bot') {
+  const msgs = document.getElementById('chatMessages');
+  const div  = document.createElement('div');
+  div.className = `msg ${type}`;
+  if (type === 'bot') {
+    div.innerHTML = `
+      <div class="msg-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div class="msg-bubble">${text}</div>`;
+  } else {
+    div.innerHTML = `<div class="msg-bubble">${text}</div>`;
+  }
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function sendChatMsg(text) {
+  if (!text.trim()) return;
+  addMsg(text, 'user');
+  document.getElementById('chatInput').value = '';
+
+  setTimeout(() => {
+    const key = keyword(text);
+    const resp = key
+      ? FAQs[key]
+      : '¡Gracias por tu consulta! Por el momento no tengo información específica sobre eso. Te recomiendo llamar al 147 o visitar el Centro de Atención al Pasajero en el Hall Principal.';
+    addMsg(resp, 'bot');
+  }, 600);
+}
+
+// Fab toggle
+const fab   = document.getElementById('chatFab');
+const panel = document.getElementById('chatPanel');
+fab.addEventListener('click', () => {
+  const open = panel.classList.toggle('open');
+  fab.setAttribute('aria-expanded', open);
+  fab.querySelector('.badge-notif').style.display = 'none';
+  if (open) document.getElementById('chatInput').focus();
+});
+document.getElementById('chatClose').addEventListener('click', () => {
+  panel.classList.remove('open');
+  fab.setAttribute('aria-expanded', 'false');
+});
+
+// Send
+document.getElementById('chatSend').addEventListener('click', () =>
+  sendChatMsg(document.getElementById('chatInput').value));
+document.getElementById('chatInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') sendChatMsg(e.target.value);
+});
+
+// Quick replies
+document.querySelectorAll('.qreply').forEach(btn =>
+  btn.addEventListener('click', () => sendChatMsg(btn.dataset.q)));
+</script>
+</body>
+</html>

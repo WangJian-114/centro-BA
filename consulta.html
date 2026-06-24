@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulta de Viajes – CentroBA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/consulta.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="CentroBA – Inicio">
+      <div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>
+      CentroBA
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Nuestras líneas</a>
+      <a href="consulta.html" class="active">Consulta de Viajes</a>
+      <a href="servicios.html">Servicios de Terminal</a>
+      <a href="alertas.html">Alertas y novedades</a>
+      <a href="asistencia.html">Asistencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="nav-btn">Iniciar Sesión</button>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" role="dialog" aria-label="Menú móvil">
+  <a href="index.html">Nuestras líneas</a>
+  <a href="consulta.html" class="active">Consulta de Viajes</a>
+  <a href="servicios.html">Servicios de Terminal</a>
+  <a href="alertas.html">Alertas y novedades</a>
+  <a href="asistencia.html">Asistencia</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="#" class="m-login">Iniciar Sesión</a>
+</div>
+
+<!-- HERO -->
+<section class="consulta-hero" aria-labelledby="consulta-heading">
+  <div class="consulta-hero-inner">
+    <h1 id="consulta-heading">Consultá tu viaje</h1>
+    <p>Encontrá la mejor forma de llegar a tu destino en la Ciudad de Buenos Aires con información actualizada en tiempo real.</p>
+  </div>
+</section>
+
+<!-- FORMULARIO DE BÚSQUEDA -->
+<div class="search-form-wrapper">
+  <div class="search-form-card">
+    <form id="tripForm" aria-label="Formulario de consulta de viaje" novalidate>
+      <div class="form-grid">
+
+        <div class="form-field">
+          <label for="origen">Origen</label>
+          <div class="field-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
+            <select id="origen" name="origen" required aria-required="true">
+              <option value="">Seleccioná origen...</option>
+              <option value="retiro">Retiro</option>
+              <option value="constitucion">Constitución</option>
+              <option value="once">Once</option>
+              <option value="palermo">Palermo</option>
+              <option value="belgrano">Belgrano</option>
+              <option value="flores">Flores</option>
+              <option value="caballito">Caballito</option>
+              <option value="barracas">Barracas</option>
+              <option value="la_boca">La Boca</option>
+              <option value="san_telmo">San Telmo</option>
+              <option value="microcentro">Microcentro</option>
+              <option value="villa_urquiza">Villa Urquiza</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="destino">Destino</label>
+          <div class="field-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <select id="destino" name="destino" required aria-required="true">
+              <option value="">Seleccioná destino...</option>
+              <option value="retiro">Retiro</option>
+              <option value="constitucion">Constitución</option>
+              <option value="once">Once</option>
+              <option value="palermo">Palermo</option>
+              <option value="belgrano">Belgrano</option>
+              <option value="flores">Flores</option>
+              <option value="caballito">Caballito</option>
+              <option value="barracas">Barracas</option>
+              <option value="la_boca">La Boca</option>
+              <option value="san_telmo">San Telmo</option>
+              <option value="microcentro">Microcentro</option>
+              <option value="villa_urquiza">Villa Urquiza</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="horario">Horario de salida</label>
+          <div class="field-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <input type="time" id="horario" name="horario" value="08:00" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-buscar" aria-label="Buscar opciones de viaje">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Buscar
+        </button>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ÁREA DE RESULTADOS -->
+<div class="results-section" aria-live="polite" aria-label="Resultados de consulta de viaje">
+
+  <!-- Estado vacío -->
+  <div class="empty-state show" id="emptyState" aria-hidden="false">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <h3>Seleccioná origen y destino</h3>
+    <p>Completá el formulario para ver las opciones de transporte disponibles para tu viaje.</p>
+  </div>
+
+  <!-- Cargando -->
+  <div class="loading-state" id="loadingState" aria-hidden="true" aria-label="Buscando opciones de viaje">
+    <div class="spinner" aria-hidden="true"></div>
+    <span>Buscando opciones de viaje...</span>
+  </div>
+
+  <!-- Resultados -->
+  <div id="resultsContainer" hidden>
+    <div class="results-header">
+      <div>
+        <h2 id="resultsTitle">Opciones de viaje</h2>
+        <p class="results-route" id="resultsRoute"></p>
+      </div>
+    </div>
+    <div class="results-list" id="resultsList" role="list"></div>
+  </div>
+
+</div>
+
+<!-- TIPS -->
+<div class="consulta-info" aria-label="Información útil sobre el viaje">
+  <div class="consulta-info-inner">
+    <div class="consulta-tip">
+      <div class="consulta-tip-ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      </div>
+      <div>
+        <h4>Pagá con SUBE</h4>
+        <p>Utilizá tu tarjeta SUBE para acceder a descuentos y beneficios en todos los medios de transporte.</p>
+      </div>
+    </div>
+    <div class="consulta-tip">
+      <div class="consulta-tip-ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <div>
+        <h4>Verificá alertas</h4>
+        <p>Antes de salir revisá la página de alertas para conocer cortes, desvíos o demoras en tu recorrido.</p>
+      </div>
+    </div>
+    <div class="consulta-tip">
+      <div class="consulta-tip-ico" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <h4>Viajá seguro</h4>
+        <p>Nuestras unidades están monitoreadas en tiempo real. Ante cualquier incidente llamá al 147.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>CentroBA</a>
+      <p>Impulsando la movilidad urbana con tecnología y compromiso ciudadano.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="index.html">Nuestras Líneas</a></li>
+        <li><a href="consulta.html">Consulta de Viajes</a></li>
+        <li><a href="servicios.html">Servicios de Terminal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Soporte</h4>
+      <ul>
+        <li><a href="alertas.html">Alertas y Novedades</a></li>
+        <li><a href="asistencia.html">Asistencia al Pasajero</a></li>
+        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Institucional</h4>
+      <ul>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="#">Privacidad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2024 CentroBA – Gobierno de la Ciudad de Buenos Aires</span>
+      <span>Versión 2.4.0</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+/* =============================================
+   DATOS SIMULADOS Y LÓGICA DE CONSULTA DE VIAJES
+   ============================================= */
+
+const BARRIOS = {
+  retiro:        { nombre: 'Retiro',        zona: 'norte' },
+  constitucion:  { nombre: 'Constitución',  zona: 'sur'   },
+  once:          { nombre: 'Once',          zona: 'centro'},
+  palermo:       { nombre: 'Palermo',       zona: 'norte' },
+  belgrano:      { nombre: 'Belgrano',      zona: 'norte' },
+  flores:        { nombre: 'Flores',        zona: 'oeste' },
+  caballito:     { nombre: 'Caballito',     zona: 'centro'},
+  barracas:      { nombre: 'Barracas',      zona: 'sur'   },
+  la_boca:       { nombre: 'La Boca',       zona: 'sur'   },
+  san_telmo:     { nombre: 'San Telmo',     zona: 'sur'   },
+  microcentro:   { nombre: 'Microcentro',   zona: 'centro'},
+  villa_urquiza: { nombre: 'Villa Urquiza', zona: 'norte' },
+};
+
+// Rutas simuladas por pares origen-destino
+const RUTAS_DB = [
+  {
+    tipos: ['bus', 'subte'],
+    lineas: [
+      { tipo: 'bus',    nombre: 'Colectivo 39',  plataforma: 'Plataforma 3 – Ramal A', paradas: 8,  tiempo: 22, costo: 850,  detalle: ['Subí en la parada de Corrientes y Callao', 'Bajá en la parada de Constitución (Av. Brasil)', 'El colectivo pasa cada 8 minutos'] },
+      { tipo: 'subte',  nombre: 'Subte Línea C', plataforma: 'Línea C – Dirección Sur', paradas: 6,  tiempo: 14, costo: 700,  detalle: ['Tomá la Línea C en Retiro', 'Bajá en Constitución (6 estaciones)', 'Frecuencia: cada 4 minutos en hora pico'] },
+      { tipo: 'metrobus', nombre: 'Metrobus 9 de Julio', plataforma: 'Andén 1 – Norte', paradas: 10, tiempo: 30, costo: 850, detalle: ['Tomá el Metrobus en el Obelisco', 'Continuá hasta Constitución por el corredor', 'Frecuencia: cada 6 minutos'] },
+    ]
+  }
+];
+
+// Generar rutas dinámicas según origen/destino
+function generarRutas(origenKey, destinoKey) {
+  const origen  = BARRIOS[origenKey];
+  const destino = BARRIOS[destinoKey];
+
+  // Semilla determinista basada en origen+destino
+  const seed = origenKey.charCodeAt(0) + destinoKey.charCodeAt(0);
+
+  const tiempos = {
+    base: 10 + (seed % 20),
+    rapido: 8 + (seed % 15),
+    lento: 18 + (seed % 25),
+  };
+
+  const rutas = [
+    {
+      tipo: 'bus',
+      nombre: `Colectivo ${67 + (seed % 60)}`,
+      recomendado: true,
+      plataforma: `Plataforma ${1 + (seed % 8)} – Sector ${String.fromCharCode(65 + seed % 4)}`,
+      paradas: 5 + (seed % 10),
+      tiempo: tiempos.rapido,
+      costo: 850,
+      steps: [
+        `Dirigite a la parada de ${origen.nombre} (Av. principal)`,
+        `Tomá el colectivo dirección ${destino.nombre}`,
+        `Bajá en la parada ${destino.nombre} Centro (${3 + seed % 5} cuadras de tu destino)`,
+        'El servicio opera de 05:00 a 00:30 hs',
+      ]
+    },
+    {
+      tipo: 'subte',
+      nombre: `Subte Línea ${'ABCDE'[seed % 5]}`,
+      recomendado: false,
+      plataforma: `Estación ${origen.nombre} – Línea ${'ABCDE'[seed % 5]}`,
+      paradas: 3 + (seed % 6),
+      tiempo: tiempos.base,
+      costo: 700,
+      steps: [
+        `Bajá al subte en ${origen.nombre}`,
+        `Tomá la Línea ${'ABCDE'[seed % 5]} dirección ${destino.nombre}`,
+        `Bajá en la estación ${destino.nombre} (${2 + seed % 4} estaciones)`,
+        'Frecuencia: cada 4-6 minutos en hora pico',
+      ]
+    },
+    {
+      tipo: 'bus',
+      nombre: `Colectivo ${102 + (seed % 30)} + ${39 + (seed % 20)}`,
+      recomendado: false,
+      plataforma: `Parada ${origen.nombre} Esquina`,
+      paradas: 12 + (seed % 8),
+      tiempo: tiempos.lento,
+      costo: 1700,
+      steps: [
+        `Tomá el colectivo ${102 + (seed % 30)} desde ${origen.nombre}`,
+        `Bajá en la terminal intermedia (${6 + seed % 5} paradas)`,
+        `Combiná con el ${39 + (seed % 20)} dirección ${destino.nombre}`,
+        `Bajá en ${destino.nombre} (${5 + seed % 4} paradas más)`,
+      ]
+    }
+  ];
+
+  return rutas;
+}
+
+function iconoTransporte(tipo) {
+  const iconos = {
+    bus:      `<svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+    subte:    `<svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="16" rx="2"/><line x1="6" y1="18" x2="6" y2="22"/><line x1="18" y1="18" x2="18" y2="22"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="9" x2="15" y2="9"/></svg>`,
+    train:    `<svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="16" rx="2"/><line x1="8" y1="18" x2="8" y2="22"/><line x1="16" y1="18" x2="16" y2="22"/><line x1="12" y1="2" x2="12" y2="10"/></svg>`,
+    metrobus: `<svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8"/></svg>`,
+  };
+  return iconos[tipo] || iconos.bus;
+}
+
+function renderRutas(rutas, origenNombre, destinoNombre) {
+  const container = document.getElementById('resultsContainer');
+  const list      = document.getElementById('resultsList');
+  const title     = document.getElementById('resultsTitle');
+  const route     = document.getElementById('resultsRoute');
+
+  title.textContent = `${rutas.length} opciones de viaje`;
+  route.innerHTML   = `De <strong>${origenNombre}</strong> a <strong>${destinoNombre}</strong>`;
+  list.innerHTML    = '';
+
+  rutas.forEach((ruta, idx) => {
+    const card = document.createElement('article');
+    card.className  = `result-card${ruta.recomendado ? ' recommended' : ''}`;
+    card.setAttribute('role', 'listitem');
+    card.setAttribute('aria-label', `${ruta.nombre}, ${ruta.tiempo} minutos, $${ruta.costo.toLocaleString('es-AR')}`);
+
+    card.innerHTML = `
+      <div class="result-card-top">
+        <div class="transport-ico ${ruta.tipo}" aria-hidden="true">${iconoTransporte(ruta.tipo)}</div>
+        <div class="result-info">
+          <h3>${ruta.nombre}${ruta.recomendado ? ' <span class="rec-tag">✓ Recomendado</span>' : ''}</h3>
+          <div class="result-tags">
+            <span class="rtag">${ruta.plataforma}</span>
+            <span class="rtag">${ruta.paradas} paradas</span>
+          </div>
+        </div>
+      </div>
+      <div class="result-stats">
+        <div class="rstat">
+          <div class="rstat-label">Tiempo estimado</div>
+          <div class="rstat-value highlight">${ruta.tiempo} min</div>
+        </div>
+        <div class="rstat">
+          <div class="rstat-label">Costo estimado</div>
+          <div class="rstat-value">$${ruta.costo.toLocaleString('es-AR')}</div>
+        </div>
+        <div class="rstat">
+          <div class="rstat-label">Tipo de servicio</div>
+          <div class="rstat-value" style="font-size:13px;text-transform:capitalize">${ruta.tipo === 'bus' ? 'Colectivo' : ruta.tipo === 'subte' ? 'Subterráneo' : 'Metrobús'}</div>
+        </div>
+      </div>
+      <div class="result-detail" id="detail-${idx}">
+        <div class="result-detail-inner">
+          <div class="detail-steps">
+            ${ruta.steps.map((s, i) => `<div class="dstep"><span class="dstep-num">${i+1}</span><span>${s}</span></div>`).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+
+    card.addEventListener('click', () => {
+      const det = card.querySelector('.result-detail');
+      det.classList.toggle('open');
+    });
+
+    list.appendChild(card);
+  });
+
+  container.hidden = false;
+}
+
+/* ── Helpers de validación visual para selects ── */
+function selectError(el, msg) {
+  el.classList.add('sel-error');
+  el.classList.remove('sel-ok');
+  let err = el.closest('.form-field').querySelector('.field-err');
+  if (!err) {
+    err = document.createElement('span');
+    err.className = 'field-err';
+    err.setAttribute('aria-live', 'polite');
+    el.closest('.form-field').appendChild(err);
+  }
+  err.textContent = msg;
+}
+function selectOk(el) {
+  el.classList.remove('sel-error');
+  el.classList.add('sel-ok');
+  const err = el.closest('.form-field').querySelector('.field-err');
+  if (err) err.textContent = '';
+}
+
+['origen','destino'].forEach(id => {
+  document.getElementById(id).addEventListener('change', function() {
+    if (this.value) selectOk(this); else selectError(this, 'Seleccioná una opción.');
+  });
+});
+
+// Manejo del formulario
+document.getElementById('tripForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const origenEl  = document.getElementById('origen');
+  const destinoEl = document.getElementById('destino');
+  const origen    = origenEl.value;
+  const destino   = destinoEl.value;
+
+  let valid = true;
+  if (!origen)  { selectError(origenEl,  'Seleccioná el punto de origen.');  valid = false; }
+  else selectOk(origenEl);
+  if (!destino) { selectError(destinoEl, 'Seleccioná el punto de destino.'); valid = false; }
+  else selectOk(destinoEl);
+
+  if (!valid) { origenEl.focus(); return; }
+
+  if (origen === destino) {
+    selectError(destinoEl, 'El destino debe ser diferente al origen.');
+    destinoEl.focus();
+    return;
+  }
+
+  const empty   = document.getElementById('emptyState');
+  const loading = document.getElementById('loadingState');
+  const results = document.getElementById('resultsContainer');
+
+  // Resetear
+  empty.classList.remove('show');   empty.setAttribute('aria-hidden','true');
+  loading.classList.add('show');    loading.setAttribute('aria-hidden','false');
+  results.hidden = true;
+
+  // Simular delay de red
+  setTimeout(() => {
+    loading.classList.remove('show'); loading.setAttribute('aria-hidden','true');
+
+    const rutas = generarRutas(origen, destino);
+    renderRutas(rutas, BARRIOS[origen].nombre, BARRIOS[destino].nombre);
+  }, 1200);
+});
+</script>
+</body>
+</html>

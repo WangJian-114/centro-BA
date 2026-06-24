@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CentroBA – Movilidad Inteligente para la Ciudad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/index.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="CentroBA – Inicio">
+      <div class="logo-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg>
+      </div>
+      CentroBA
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Nuestras líneas</a>
+      <a href="consulta.html">Consulta de Viajes</a>
+      <a href="servicios.html">Servicios de Terminal</a>
+      <a href="alertas.html">Alertas y novedades</a>
+      <a href="asistencia.html">Asistencia</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="nav-btn">Iniciar Sesión</button>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" role="dialog" aria-label="Menú móvil">
+  <a href="index.html" class="active">Nuestras líneas</a>
+  <a href="consulta.html">Consulta de Viajes</a>
+  <a href="servicios.html">Servicios de Terminal</a>
+  <a href="alertas.html">Alertas y novedades</a>
+  <a href="asistencia.html">Asistencia</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="#" class="m-login">Iniciar Sesión</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge" role="status" aria-label="Información actualizada en tiempo real">
+      <span class="dot" aria-hidden="true"></span>
+      Actualizado en tiempo real
+    </div>
+    <h1 id="hero-heading">Movilidad Inteligente<br>para la Ciudad</h1>
+    <p>Descubrí la nueva forma de moverte por Buenos Aires. Información en tiempo real, recorridos optimizados y una red conectada para mejorar tu viaje diario.</p>
+    <div class="hero-btns">
+      <a href="#lineas" class="btn-primary">
+        Ver líneas
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#" class="btn-ghost-white">
+        Consultar horarios
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-wrapper" aria-label="Estadísticas del servicio en tiempo real">
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-head">
+        <div class="stat-icon blue" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8"/></svg>
+        </div>
+        <span class="stat-lbl">Disponibilidad</span>
+      </div>
+      <div class="stat-value">134</div>
+      <div class="stat-desc">Líneas Activas</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-head">
+        <div class="stat-icon amber" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <span class="stat-lbl">Operación</span>
+      </div>
+      <div class="stat-value is-green">Normal</div>
+      <div class="stat-desc">Estado del Servicio</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-head">
+        <div class="stat-icon green" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <span class="stat-lbl">Demanda</span>
+      </div>
+      <div class="stat-value">45k+</div>
+      <div class="stat-desc">Pasajeros en Red</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- NUESTRAS LÍNEAS -->
+<section class="lines-section" id="lineas" aria-labelledby="lines-heading">
+  <div class="section-inner">
+    <div class="section-hd">
+      <div>
+        <h2 id="lines-heading">Nuestras Líneas</h2>
+        <p>Gestionamos los corredores principales de la Ciudad Autónoma de Buenos Aires, garantizando puntualidad y seguridad en cada trayecto.</p>
+      </div>
+      <div class="search-bar" role="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="lineSearch" placeholder="Buscar línea..." aria-label="Buscar línea de colectivo" />
+      </div>
+    </div>
+
+    <div class="lines-grid" id="linesGrid" role="list">
+
+      <article class="line-card" role="listitem" aria-label="Línea 67, En horario">
+        <div class="line-status">
+          <span class="badge badge-ok">En horario</span>
+        </div>
+        <div class="line-num ln-blue" aria-label="67">67</div>
+        <h3 class="line-name">Línea 67</h3>
+        <p class="line-route">Constitución – Hospital Rawson – Villa Martelli.</p>
+        <a href="https://chloeuade-eng.github.io/colectivo67/" target="_blank" rel="noopener" class="btn-outline">
+          Ver recorrido
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <article class="line-card" role="listitem" aria-label="Línea 39, Demorado">
+        <div class="line-status">
+          <span class="badge badge-delay">Demorado</span>
+        </div>
+        <div class="line-num ln-red" aria-label="39">39</div>
+        <h3 class="line-name">Línea 39</h3>
+        <p class="line-route">Barracas – Chacarita – Palermo Hollywood.</p>
+        <a href="https://danitauade-cell.github.io/paginaindividuallinea39/" target="_blank" rel="noopener" class="btn-outline">
+          Ver recorrido
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <article class="line-card" role="listitem" aria-label="Línea 102, En horario">
+        <div class="line-status">
+          <span class="badge badge-ok">En horario</span>
+        </div>
+        <div class="line-num ln-green" aria-label="102">102</div>
+        <h3 class="line-name">Línea 102</h3>
+        <p class="line-route">Barracas – Palermo – Museo Nacional de Bellas Artes.</p>
+        <a href="https://colombojulieta-uade.github.io/WebIndividualColombo/" target="_blank" rel="noopener" class="btn-outline">
+          Ver recorrido
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <article class="line-card" role="listitem" aria-label="Línea 130, En horario">
+        <div class="line-status">
+          <span class="badge badge-ok">En horario</span>
+        </div>
+        <div class="line-num ln-orange" aria-label="130">130</div>
+        <h3 class="line-name">Línea 130</h3>
+        <p class="line-route">La Boca – Retiro – San Isidro (Paseo del Bajo).</p>
+        <a href="https://wangjian-114.github.io/linea-130/" target="_blank" rel="noopener" class="btn-outline">
+          Ver recorrido
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <article class="line-card" role="listitem" aria-label="Línea 111, Desviado">
+        <div class="line-status">
+          <span class="badge badge-dev">Desviado</span>
+        </div>
+        <div class="line-num ln-purple" aria-label="111">111</div>
+        <h3 class="line-name">Línea 111</h3>
+        <p class="line-route">Aduana – Palermo – Jose León Suárez.</p>
+        <a href="https://fcolluragarcia.github.io/proyectolinea111/" target="_blank" rel="noopener" class="btn-outline">
+          Ver recorrido
+          <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROMO -->
+<section class="promo-section" aria-label="Aplicación y servicios destacados">
+  <div class="promo-inner">
+
+    <!-- App card -->
+    <div class="promo-app">
+      <h2>Nueva App CentroBA</h2>
+      <p>Descargá nuestra aplicación y recibí notificaciones personalizadas sobre el estado de tus líneas favoritas.</p>
+      <div class="phone-row" aria-hidden="true">
+        <div class="phone-mock"></div>
+        <div class="phone-mock"></div>
+      </div>
+      <a href="#" class="app-badge" aria-label="Descargar en App Store">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        DISPONIBLE EN&ensp;<strong>App Store</strong>
+      </a>
+    </div>
+
+    <!-- Info cards -->
+    <div class="promo-cards">
+
+      <div class="info-card">
+        <div class="info-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.18 2 2 0 012.1 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.5 7.5a16 16 0 006 6l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0120 16.92z"/></svg>
+        </div>
+        <h3>Asistencia 24hs</h3>
+        <p>¿Tenés alguna duda o reclamo? Nuestro equipo de atención al pasajero está disponible para ayudarte.</p>
+        <a href="asistencia.html" class="link-arrow">
+          Ir a soporte
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h3>Compromiso Accesible</h3>
+        <p>El 95% de nuestras unidades cuentan con rampas y espacios exclusivos para movilidad reducida.</p>
+        <a href="accesibilidad.html" class="link-arrow">
+          Más información
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" aria-label="CentroBA inicio">
+        <div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>
+        CentroBA
+      </a>
+      <p>Impulsando la movilidad urbana con tecnología y compromiso ciudadano.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Mapa del Sitio</h4>
+      <ul>
+        <li><a href="index.html">Nuestras Líneas</a></li>
+        <li><a href="#">Recorridos</a></li>
+        <li><a href="#">Puntos de Carga SUBE</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Institucional</h4>
+      <ul>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+        <li><a href="#">Prensa</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-newsletter footer-col">
+      <h4>Descargas</h4>
+      <p>Llevá la ciudad en tu bolsillo.</p>
+      <a href="#" class="app-badge" style="font-size:12px;" aria-label="Descargar en App Store">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        DISPONIBLE EN&ensp;<strong>App Store</strong>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2024 CentroBA – Gobierno de la Ciudad de Buenos Aires</span>
+      <span>Versión 2.4.0 &nbsp;·&nbsp; <a href="#">Privacidad</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  document.getElementById('lineSearch').addEventListener('input', function () {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('#linesGrid .line-card').forEach(card => {
+      card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  });
+</script>
+</body>
+</html>

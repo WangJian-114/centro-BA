@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accesibilidad – CentroBA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/accesibilidad.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" role="navigation" aria-label="Navegación principal">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="CentroBA – Inicio">
+      <div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>
+      CentroBA
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Nuestras líneas</a>
+      <a href="consulta.html">Consulta de Viajes</a>
+      <a href="servicios.html">Servicios de Terminal</a>
+      <a href="alertas.html">Alertas y novedades</a>
+      <a href="asistencia.html">Asistencia</a>
+      <a href="accesibilidad.html" class="active">Accesibilidad</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <button class="nav-btn">Iniciar Sesión</button>
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" role="dialog" aria-label="Menú móvil">
+  <a href="index.html">Nuestras líneas</a>
+  <a href="consulta.html">Consulta de Viajes</a>
+  <a href="servicios.html">Servicios de Terminal</a>
+  <a href="alertas.html">Alertas y novedades</a>
+  <a href="asistencia.html">Asistencia</a>
+  <a href="accesibilidad.html" class="active">Accesibilidad</a>
+  <a href="contacto.html">Contacto</a>
+  <a href="#" class="m-login">Iniciar Sesión</a>
+</div>
+
+<!-- HERO -->
+<section class="access-hero" aria-labelledby="access-heading">
+  <div class="access-hero-inner">
+    <div class="access-hero-left">
+      <div class="access-pill">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M9 11l3 2 3-2M9 17l3 4 3-4"/></svg>
+        COMPROMISO DE INCLUSIÓN
+      </div>
+      <h1 id="access-heading">Movilidad sin barreras para todos los vecinos.</h1>
+      <p>En CentroBA trabajamos para que el sistema de transporte sea 100% inclusivo. Implementamos estándares internacionales para garantizar que cada viaje sea autónomo, seguro y accesible.</p>
+    </div>
+    <div class="access-hero-right">
+      <div class="fleet-badge" aria-label="95 por ciento de la flota adaptada">
+        <div class="pct">95%</div>
+        <div class="lbl">Flota Adaptada</div>
+      </div>
+      <div class="access-figure" aria-hidden="true">
+        <!-- Figura persona accesibilidad -->
+        <svg viewBox="0 0 80 100" fill="white">
+          <circle cx="40" cy="12" r="10"/>
+          <line x1="40" y1="22" x2="40" y2="58" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <line x1="15" y1="38" x2="65" y2="38" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <line x1="40" y1="58" x2="20" y2="90" stroke="white" stroke-width="6" stroke-linecap="round"/>
+          <line x1="40" y1="58" x2="60" y2="90" stroke="white" stroke-width="6" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT CARDS -->
+<div class="access-stats-wrapper" aria-label="Indicadores de accesibilidad">
+  <div class="access-stats-grid">
+
+    <div class="astat-card">
+      <div class="astat-top">
+        <div class="astat-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8"/></svg>
+        </div>
+        <div class="astat-info">
+          <h3>Accesibilidad Física</h3>
+          <p>95% de la flota accesible</p>
+        </div>
+        <span class="astat-tag ok">En horario</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" style="width:95%" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="95% de accesibilidad física"></div>
+      </div>
+    </div>
+
+    <div class="astat-card">
+      <div class="astat-top">
+        <div class="astat-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="astat-info">
+          <h3>Plataforma Digital</h3>
+          <p>Cumplimiento WCAG 2.1 AA</p>
+        </div>
+        <span class="astat-tag updated">Actualizado</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" style="width:100%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="100% de cumplimiento WCAG"></div>
+      </div>
+    </div>
+
+    <div class="astat-card">
+      <div class="astat-top">
+        <div class="astat-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+        </div>
+        <div class="astat-info">
+          <h3>Audio y Señalética</h3>
+          <p>88% cobertura en paradas</p>
+        </div>
+        <span class="astat-tag live">Live</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" style="width:88%" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="88% de cobertura de audio en paradas"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- INFRAESTRUCTURA -->
+<section class="infra-section" aria-labelledby="infra-heading">
+  <div class="infra-inner">
+    <div class="infra-header">
+      <div>
+        <h2 id="infra-heading">Infraestructura en la Ciudad</h2>
+        <p>Nuestros vehículos y estaciones están diseñados para eliminar obstáculos físicos, asegurando que el traslado de personas con movilidad reducida sea fluido y digno.</p>
+      </div>
+      <a href="#" class="link-arrow">
+        Ver manual de infraestructura
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div class="infra-grid">
+      <div class="infra-card">
+        <div class="infra-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M5 12H3l9-9 9 9h-2M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+        </div>
+        <p class="ic-label">Rampas Hidráulicas</p>
+        <p>Sistemas de acceso rápido en el 100% de las nuevas unidades de Metrobus.</p>
+      </div>
+
+      <div class="infra-card">
+        <div class="infra-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M9 11l3 2 3-2M9 17l3 4 3-4"/></svg>
+        </div>
+        <p class="ic-label">Espacios para Sillas de Ruedas</p>
+        <p>Zonas exclusivas con anclajes de seguridad y timbres a altura accesible.</p>
+      </div>
+
+      <div class="infra-card">
+        <div class="infra-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 010 7.07"/></svg>
+        </div>
+        <p class="ic-label">Audio de Paradas</p>
+        <p>Anuncio vocal de cada estación para personas con discapacidad visual.</p>
+      </div>
+
+      <div class="infra-card">
+        <div class="infra-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <p class="ic-label">Pantallas Informativas</p>
+        <p>Información en tiempo real con alto contraste y tipografía legible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA DIGITAL -->
+<section class="digital-section" aria-labelledby="digital-heading">
+  <div class="digital-inner">
+    <h2 id="digital-heading">Experiencia Digital Accesible</h2>
+    <p>Nuestro portal está diseñado bajo los estándares WCAG 2.1 para que la información de transporte llegue a todos, sin importar el dispositivo o la capacidad de navegación.</p>
+
+    <div class="digital-grid">
+
+      <div class="digital-card">
+        <div class="digital-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01"/></svg>
+        </div>
+        <div>
+          <h3>Navegación por teclado</h3>
+          <p>Toda la interfaz es operable mediante atajos de teclado, con indicadores de foco claros para usuarios con movilidad reducida.</p>
+        </div>
+      </div>
+
+      <div class="digital-card">
+        <div class="digital-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <h3>Compatibilidad WCAG</h3>
+          <p>Cumplimos con el nivel AA de las pautas de accesibilidad para el contenido web, garantizando robustez y legibilidad.</p>
+        </div>
+      </div>
+
+      <div class="digital-card">
+        <div class="digital-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <div>
+          <h3>Contraste alto</h3>
+          <p>Nuestra paleta de colores asegura una relación de contraste mínima de 4.5:1 para todo el texto y componentes críticos.</p>
+        </div>
+      </div>
+
+      <div class="digital-card">
+        <div class="digital-ico" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v6M9 11l3 2 3-2M9 17l3 4 3-4"/></svg>
+        </div>
+        <div>
+          <h3>Lectores de pantalla</h3>
+          <p>Etiquetas ARIA descriptivas y estructura semántica optimizada para JAWS, NVDA y VoiceOver.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner" aria-label="Compromiso con la movilidad ciudadana">
+  <div class="cta-banner-bg" aria-hidden="true"></div>
+  <div class="cta-banner-overlay" aria-hidden="true"></div>
+  <div class="cta-banner-content">
+    <h2>Un paso adelante en movilidad ciudadana</h2>
+    <p>Seguimos invirtiendo en tecnología y capacitación para que Buenos Aires sea una ciudad referente en accesibilidad universal.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo"><div class="logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M4 8V6a2 2 0 012-2h12a2 2 0 012 2v2M8 12h8M3 12h18"/></svg></div>CentroBA</a>
+      <p>Gobierno de la Ciudad de Buenos Aires</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explorar</h4>
+      <ul>
+        <li><a href="#">Mapa del Sitio</a></li>
+        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="#">Privacidad de datos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Idiomas</h4>
+      <div style="display:flex;gap:8px;margin-top:6px;">
+        <button style="padding:5px 11px;border:1.5px solid white;border-radius:5px;font-size:12px;font-weight:700;color:white;background:rgba(255,255,255,.15);cursor:pointer;" aria-pressed="true">ES</button>
+        <button style="padding:5px 11px;border:1.5px solid rgba(255,255,255,.3);border-radius:5px;font-size:12px;font-weight:700;color:rgba(255,255,255,.5);background:transparent;cursor:pointer;">EN</button>
+        <button style="padding:5px 11px;border:1.5px solid rgba(255,255,255,.3);border-radius:5px;font-size:12px;font-weight:700;color:rgba(255,255,255,.5);background:transparent;cursor:pointer;">PT</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span>© 2024 CentroBA – Gobierno de la Ciudad de Buenos Aires</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
