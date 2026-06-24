@@ -259,25 +259,60 @@
 .rstat-value { font-size: 16px; font-weight: 800; color: var(--txt-dark); }
 .rstat-value.highlight { color: var(--blue); }
 
+/* Botón expandir */
+.result-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-light);
+  cursor: pointer;
+  user-select: none;
+}
+.result-toggle-row:hover { background: #f0f4f8; }
+.result-toggle-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: .04em;
+}
+.result-toggle-chevron {
+  width: 18px;
+  height: 18px;
+  stroke: var(--blue);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transition: transform .25s ease;
+  flex-shrink: 0;
+}
+.result-card.is-open .result-toggle-chevron { transform: rotate(180deg); }
+
 /* Detalle expandible */
 .result-detail {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .3s ease;
 }
-.result-detail.open { max-height: 300px; }
+.result-card.is-open .result-detail { grid-template-rows: 1fr; }
 .result-detail-inner {
-  padding: 16px 20px;
-  background: var(--bg-light);
+  overflow: hidden;
+  padding: 0 20px;
+  background: white;
   border-top: 1px solid var(--border);
+  transition: padding .3s ease;
 }
-.detail-steps { display: flex; flex-direction: column; gap: 10px; }
+.result-card.is-open .result-detail-inner { padding: 18px 20px; }
+
+.detail-steps { display: flex; flex-direction: column; gap: 12px; }
 .dstep {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   font-size: 13px;
   color: var(--txt-med);
+  line-height: 1.5;
 }
 .dstep-num {
   width: 22px;
@@ -291,8 +326,27 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  margin-top: 1px;
+  margin-top: 2px;
 }
+.dstep span b { color: var(--txt-dark); font-weight: 600; }
+
+/* Botón limpiar resultados */
+.btn-nueva-busqueda {
+  padding: 8px 18px;
+  border: 1.5px solid var(--border-md);
+  border-radius: var(--r-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--txt-med);
+  background: white;
+  cursor: pointer;
+  transition: border-color .18s, color .18s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-nueva-busqueda:hover { border-color: var(--blue); color: var(--blue); }
+.btn-nueva-busqueda svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; }
 
 /* ----- INFO FOOTER ----- */
 .consulta-info {

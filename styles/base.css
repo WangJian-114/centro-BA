@@ -143,20 +143,6 @@ button         { cursor: pointer; border: none; background: none; }
 .nav-links a:hover  { color: var(--navy); }
 .nav-links a.active { color: var(--navy); font-weight: 600; border-bottom-color: var(--blue); }
 
-/* Login button */
-.nav-btn {
-  margin-left: auto;
-  padding: 9px 20px;
-  background: var(--navy);
-  color: white;
-  border-radius: var(--r-md);
-  font-size: 13.5px;
-  font-weight: 600;
-  white-space: nowrap;
-  transition: background .18s, transform .1s;
-  flex-shrink: 0;
-}
-.nav-btn:hover { background: var(--navy-dark); }
 
 /* Hamburger */
 .hamburger {
@@ -484,7 +470,7 @@ button         { cursor: pointer; border: none; background: none; }
 
 /* ----- Responsive navbar ----- */
 @media (max-width: 900px) {
-  .nav-links, .nav-btn { display: none; }
+  .nav-links { display: none; }
   .hamburger            { display: flex; }
 }
 

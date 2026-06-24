@@ -447,6 +447,155 @@
 }
 .news-link:hover { gap: 6px; }
 
+/* ----- Severity badges ----- */
+.sev {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.sev-urgente    { background: #fee2e2; color: #b91c1c; }
+.sev-moderado   { background: #fef3c7; color: #b45309; }
+.sev-planificado{ background: #dbeafe; color: #1d4ed8; }
+.sev-leve       { background: #d1fae5; color: #065f46; }
+
+/* ----- Line pills colors ----- */
+.ln-blue  { background: #2563eb; }
+.ln-red   { background: #dc2626; }
+.ln-green { background: #16a34a; }
+.ln-gray  { background: #64748b; }
+.ln-amber { background: #d97706; }
+.ln-purple{ background: #7c3aed; }
+
+/* ----- Link arrow ----- */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--blue);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  transition: gap .15s;
+}
+.link-arrow:hover { gap: 8px; }
+.link-arrow svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* ----- Desvío expandible ----- */
+.alert-desvio {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .3s ease;
+}
+.alert-desvio.open { grid-template-rows: 1fr; }
+.alert-desvio-inner {
+  overflow: hidden;
+  font-size: 13px;
+  color: var(--txt-med);
+  line-height: 1.6;
+}
+.alert-desvio.open .alert-desvio-inner {
+  padding: 12px 0 4px;
+  border-top: 1px dashed var(--border-md);
+  margin-top: 10px;
+}
+
+/* ----- Alerta histórica (resuelta) ----- */
+.alert-card.historica { opacity: .7; }
+.alert-card.historica .alert-body { background: #f8fafc; }
+
+/* ----- Estado vacío filtros ----- */
+.alerts-empty {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 48px 20px;
+  text-align: center;
+  color: var(--txt-light);
+}
+.alerts-empty.show { display: flex; }
+.alerts-empty svg { width: 44px; height: 44px; opacity: .3; }
+.alerts-empty h3 { font-size: 16px; font-weight: 700; color: var(--txt-med); }
+.alerts-empty p  { font-size: 13px; }
+
+/* ----- Modal Reporte Diario ----- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal-box {
+  background: white;
+  border-radius: var(--r-xl);
+  padding: 32px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 24px 48px rgba(0,0,0,.18);
+  transform: translateY(16px);
+  transition: transform .25s ease;
+}
+.modal-overlay.open .modal-box { transform: translateY(0); }
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+.modal-header h3 { font-size: 18px; font-weight: 800; color: var(--txt-dark); }
+.modal-close {
+  width: 30px; height: 30px;
+  border: none; background: var(--bg-subtle);
+  border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--txt-med);
+  transition: background .18s;
+}
+.modal-close:hover { background: var(--border-md); }
+.reporte-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.rstat-box {
+  background: var(--bg-light);
+  border-radius: var(--r-md);
+  padding: 14px;
+  text-align: center;
+}
+.rstat-box .num { font-size: 28px; font-weight: 900; color: var(--navy); }
+.rstat-box .lbl { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--txt-light); margin-top: 4px; }
+.reporte-linea {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+.reporte-linea:last-child { border-bottom: none; }
+.reporte-linea .rl-name { color: var(--txt-dark); font-weight: 600; }
+.reporte-linea .rl-status { font-size: 12px; }
+.rl-ok     { color: var(--green-dark); font-weight: 600; }
+.rl-delay  { color: var(--amber-dark); font-weight: 600; }
+.rl-issue  { color: var(--red-dark);   font-weight: 600; }
+
 /* ----- Responsive ----- */
 @media (max-width: 1024px) {
   .alerts-page-inner { grid-template-columns: 220px 1fr; }
