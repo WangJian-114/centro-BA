@@ -201,18 +201,17 @@
 .faq-item.open .faq-chevron { transform: rotate(180deg); }
 
 .faq-answer {
-  max-height: 0;
+  height: 0;
   overflow: hidden;
-  transition: max-height .3s ease;
+  transition: height .32s ease;
 }
 .faq-answer-inner {
-  padding: 0 18px 18px 60px;
+  padding: 14px 20px 20px 60px;
   font-size: 13.5px;
   color: var(--txt-med);
   line-height: 1.75;
   background: var(--bg-light);
 }
-.faq-item.open .faq-answer { max-height: 300px; }
 
 /* Sugerencia dentro de respuesta */
 .faq-tip {
@@ -313,6 +312,11 @@
   .faq-inner          { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {
-  .quick-actions-grid { grid-template-columns: repeat(2, 1fr); }
-  .assist-hero        { padding-bottom: 80px; }
+  .quick-actions-grid  { grid-template-columns: repeat(2, 1fr); }
+  .assist-hero         { padding-bottom: 80px; }
+  .faq-answer-inner    { padding: 12px 16px 18px 16px; }
+  .faq-q               { font-size: 13.5px; }
+  .faq-btn             { padding: 14px 12px; gap: 10px; }
+  .faq-ico             { width: 30px; height: 30px; min-width: 30px; }
+  .faq-ico svg         { width: 13px; height: 13px; }
 }

@@ -601,7 +601,92 @@
   .alerts-page-inner { grid-template-columns: 220px 1fr; }
   .news-col { display: none; }
 }
+
 @media (max-width: 720px) {
-  .alerts-page-inner { grid-template-columns: 1fr; }
+  /* Banner */
+  .system-banner { padding: 16px 18px; }
+  .banner-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .banner-icon-wrap {
+    width: 40px;
+    height: 40px;
+  }
+  .banner-icon-wrap svg { width: 20px; height: 20px; }
+  .banner-text { flex: 1; min-width: 0; }
+  .banner-text h2 { font-size: 15px; }
+  .banner-text p  { font-size: 12px; }
+  .banner-right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 0;
+    text-align: left;
+  }
+  .banner-time { margin-bottom: 0; font-size: 11px; }
+  .btn-dark { padding: 8px 14px; font-size: 12px; }
+
+  /* Layout */
+  .alerts-page-inner {
+    grid-template-columns: 1fr;
+    padding: 20px 16px 48px;
+    gap: 20px;
+  }
   .filter-panel { display: none; }
+
+  /* Header alertas */
+  .alerts-col-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .alerts-col-header h2 { font-size: 18px; }
+  .sort-btn { width: 100%; justify-content: center; }
+
+  /* Tarjeta alerta */
+  .alert-card { padding: 14px; }
+  .alert-card-top { gap: 10px; }
+  .alert-ico { width: 34px; height: 34px; }
+  .alert-ico svg { width: 15px; height: 15px; }
+  .alert-card-meta h3 { font-size: 14px; }
+  .alert-time { font-size: 11px; }
+  .alert-body { font-size: 13px; padding: 10px 12px; }
+  .alert-footer { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .link-arrow { font-size: 13px; }
+
+  /* Pills */
+  .affected-lines { gap: 4px; }
+  .line-pill { padding: 3px 8px; font-size: 11px; }
+
+  /* Modal */
+  .modal-box { padding: 22px 18px; }
+  .reporte-stats { grid-template-columns: repeat(3,1fr); gap: 8px; }
+  .rstat-box .num { font-size: 22px; }
+  .reporte-linea { flex-direction: column; gap: 2px; }
+
+  /* Botón filtros móvil visible */
+  #btnMobileFilter { display: flex !important; }
+
+  /* Panel filtros móvil desplegable */
+  .filter-panel.mobile-open {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    border-radius: 0;
+    overflow-y: auto;
+    padding-bottom: 80px;
+  }
+  .filter-panel-close {
+    display: none;
+    width: 100%;
+    padding: 12px;
+    margin-top: 16px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: var(--r-md);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .filter-panel.mobile-open .filter-panel-close { display: block; }
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -25,6 +25,7 @@
       <a href="servicios.html" class="active">Servicios de Terminal</a>
       <a href="alertas.html">Alertas y novedades</a>
       <a href="asistencia.html">Asistencia</a>
+      <a href="accesibilidad.html">Accesibilidad</a>
       <a href="contacto.html">Contacto</a>
     </div>
     <button class="hamburger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -36,6 +37,7 @@
   <a href="servicios.html" class="active">Servicios de Terminal</a>
   <a href="alertas.html">Alertas y novedades</a>
   <a href="asistencia.html">Asistencia</a>
+  <a href="accesibilidad.html">Accesibilidad</a>
   <a href="contacto.html">Contacto</a>
 </div>
 
@@ -561,147 +563,7 @@
   <div class="tt-loc"   id="ttLoc"></div>
 </div>
 
-<script src="main.js"></script>
-<script>
-/* ── Tabs de servicios ── */
-function irASeccion(btn, id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  const navbar  = document.querySelector('.navbar');
-  const tabsBar = document.querySelector('.servicios-tabs-bar');
-  const offset  = (navbar ? navbar.offsetHeight : 0) + (tabsBar ? tabsBar.offsetHeight : 0) + 8;
-  const top     = el.getBoundingClientRect().top + window.scrollY - offset;
-  window.scrollTo({ top, behavior: 'smooth' });
-  document.querySelectorAll('.stab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
-  btn.classList.add('active');
-  btn.setAttribute('aria-selected','true');
-}
-
-/* ── Mapa SVG: tooltip ── */
-const tooltip = document.getElementById('mapTooltip');
-const ttTitle  = document.getElementById('ttTitle');
-const ttLoc    = document.getElementById('ttLoc');
-
-document.querySelectorAll('.mapa-zone').forEach(zone => {
-  zone.addEventListener('mouseenter', e => {
-    ttTitle.textContent = zone.dataset.name;
-    ttLoc.textContent   = zone.dataset.loc;
-    tooltip.style.display = 'block';
-  });
-  zone.addEventListener('mousemove', e => {
-    tooltip.style.left = (e.clientX + 14) + 'px';
-    tooltip.style.top  = (e.clientY - 40) + 'px';
-  });
-  zone.addEventListener('mouseleave', () => {
-    tooltip.style.display = 'none';
-  });
-  zone.addEventListener('click', () => {
-    const name = zone.dataset.name;
-    const cat  = name.includes('Plataforma') ? 'banos'
-               : name.includes('Espera')      ? 'espera'
-               : name.includes('Gastron')     ? 'gastronomia'
-               : name.includes('Información') ? 'informacion'
-               : name.includes('Baños')       ? 'banos'
-               : name.includes('Estacion')    ? 'estacionamiento'
-               : null;
-    if (cat) document.getElementById(cat)?.scrollIntoView({ behavior:'smooth', block:'start' });
-  });
-  zone.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); zone.click(); }
-  });
-});
-
-/* ── Leyenda del mapa ── */
-document.querySelectorAll('.legend-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const name = item.dataset.zone;
-    const zone = document.querySelector(`.mapa-zone[data-name="${name}"]`);
-    if (zone) zone.dispatchEvent(new MouseEvent('click'));
-  });
-});
-
-/* ── Chatbot ── */
-const FAQs = {
-  horarios:        '🕐 La terminal opera de 05:00 a 00:30 hs. Los servicios nocturnos tienen horario reducido. Algunos kioscos permanecen abiertos las 24hs.',
-  baños:           '🚻 Hay baños en Planta Baja Sector Norte y Sur, y en la Zona de Plataformas (1er piso). El biceñario familiar está en Sector Central. Todos cuentan con acceso para discapacitados.',
-  estacionamiento: '🅿️ La playa de autos está en el Nivel 1 del edificio, con acceso por Av. Ramos Mejía. Capacidad: 327 vehículos. Tarifas 2025: $1.200 (15 min) · $4.500 (1 hora) · $28.000 (24 hs). Abierto las 24 hs.',
-  sube:            '💳 El módulo SUBE está en Acceso Norte, Planta Baja. Horario: L a V de 07:00 a 20:00 hs. También hay terminales de autoservicio disponibles las 24hs.',
-  wifi:            '📶 El WiFi gratuito está disponible en toda la Sala de Espera Principal (1er Piso) y en el Punto Digital. Conectate a la red "CentroBA_WiFi" sin contraseña.',
-  comida:          '🍕 La zona gastronómica cuenta con: Café Central (05:30–23:00), El Rápido (07:00–22:00), Kiosco 24hs, Heladería Patagonia y Bar El Mirador en la terraza.',
-  accesibilidad:   '♿ Contamos con rampas en todos los accesos, sala de accesibilidad en Planta Baja Norte, intérprete LSA en horario comercial, y señalética en braille.',
-  taxi:            '🚕 La parada de taxis habilitados está en el Nivel 1, acceso por Av. Ramos Mejía. Solo taxis con habilitación oficial del GCBA. Para remises, hay cabinas en el Nivel 2 (sector plataformas) con precio pactado.',
-  objetos:         '🔍 Para objetos perdidos dirigite a la Oficina de Informes en Nivel 2 (local 129-130). Horario: lunes a viernes de 08:00 a 20:00 hs. También podés comunicarte al (011) 4310-0700.',
-  lineas:          '🚌 Desde esta terminal operan más de 134 líneas de colectivos. Consultá la sección "Nuestras Líneas" en el inicio para ver recorridos y horarios en tiempo real.',
-};
-
-function keyword(msg) {
-  const m = msg.toLowerCase();
-  if (m.includes('hora') || m.includes('cuando') || m.includes('cuándo')) return 'horarios';
-  if (m.includes('baño') || m.includes('sanitario') || m.includes('wc'))  return 'baños';
-  if (m.includes('estacion') || m.includes('auto') || m.includes('auto') || m.includes('parking')) return 'estacionamiento';
-  if (m.includes('sube') || m.includes('tarjeta') || m.includes('carga')) return 'sube';
-  if (m.includes('wifi') || m.includes('internet') || m.includes('conex')) return 'wifi';
-  if (m.includes('comida') || m.includes('comer') || m.includes('rest') || m.includes('café')) return 'comida';
-  if (m.includes('access') || m.includes('silla') || m.includes('disca') || m.includes('rampa')) return 'accesibilidad';
-  if (m.includes('taxi') || m.includes('uber') || m.includes('remis')) return 'taxi';
-  if (m.includes('perd') || m.includes('olvid') || m.includes('objeto')) return 'objetos';
-  if (m.includes('línea') || m.includes('colect') || m.includes('bus'))  return 'lineas';
-  return null;
-}
-
-function addMsg(text, type = 'bot') {
-  const msgs = document.getElementById('chatMessages');
-  const div  = document.createElement('div');
-  div.className = `msg ${type}`;
-  if (type === 'bot') {
-    div.innerHTML = `
-      <div class="msg-avatar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-      <div class="msg-bubble">${text}</div>`;
-  } else {
-    div.innerHTML = `<div class="msg-bubble">${text}</div>`;
-  }
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-function sendChatMsg(text) {
-  if (!text.trim()) return;
-  addMsg(text, 'user');
-  document.getElementById('chatInput').value = '';
-
-  setTimeout(() => {
-    const key = keyword(text);
-    const resp = key
-      ? FAQs[key]
-      : '¡Gracias por tu consulta! Por el momento no tengo información específica sobre eso. Te recomiendo llamar al 147 o visitar el Centro de Atención al Pasajero en el Hall Principal.';
-    addMsg(resp, 'bot');
-  }, 600);
-}
-
-// Fab toggle
-const fab   = document.getElementById('chatFab');
-const panel = document.getElementById('chatPanel');
-fab.addEventListener('click', () => {
-  const open = panel.classList.toggle('open');
-  fab.setAttribute('aria-expanded', open);
-  fab.querySelector('.badge-notif').style.display = 'none';
-  if (open) document.getElementById('chatInput').focus();
-});
-document.getElementById('chatClose').addEventListener('click', () => {
-  panel.classList.remove('open');
-  fab.setAttribute('aria-expanded', 'false');
-});
-
-// Send
-document.getElementById('chatSend').addEventListener('click', () =>
-  sendChatMsg(document.getElementById('chatInput').value));
-document.getElementById('chatInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') sendChatMsg(e.target.value);
-});
-
-// Quick replies
-document.querySelectorAll('.qreply').forEach(btn =>
-  btn.addEventListener('click', () => sendChatMsg(btn.dataset.q)));
-</script>
+<script src="js/main.js"></script>
+<script src="js/servicios.js"></script>
 </body>
 </html>
